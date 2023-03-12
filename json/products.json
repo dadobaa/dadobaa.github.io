@@ -1,0 +1,40 @@
+{
+  "tab1": {
+    "name": "Oils",
+    "products": [{
+      "name": "Jai mata di",
+      "mrp": "43",
+      "discounted_mrp": "65",
+      "image-link": "img/product-1.jpg"
+    },{
+      "name": "Jai di",
+      "mrp": "43",
+      "discounted_mrp": "65",
+      "image-link": "img/product-2.jpg"
+    },{
+      "name": "mata di",
+      "mrp": "43",
+      "discounted_mrp": "65",
+      "image-link": "img/product-4.jpg"
+    }]
+  },
+  "tab2": {
+    "name": "Ghee",
+    "products": [{
+      "name": "Jai mata di",
+      "mrp": "43",
+      "discounted_mrp": "656",
+      "image-link": "img/product-5.jpg"
+    },{
+      "name": "Jai di",
+      "mrp": "43",
+      "discounted_mrp": "5",
+      "image-link": "img/product-7.jpg"
+    },{
+      "name": "mata di",
+      "mrp": "43",
+      "discounted_mrp": "6",
+      "image-link": "img/product-8.jpg"
+    }]
+  }
+}
