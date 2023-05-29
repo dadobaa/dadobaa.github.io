@@ -69,10 +69,9 @@ async function readJson () {
 }
 
 function makeCategoriesTab (key, name, index) {
-    const tab = `<li class="nav-item me-2">
-                            <a class="btn btn-outline-primary border-2 ${index === 1? 'active': ''}" data-bs-toggle="pill" href=#` + key + `>${name}</a>
-                        </li>`
-    return tab;
+    return `<li class="nav-item me-2">
+                            <a class="btn btn-outline-primary border-2 ${index === 1 ? 'active' : ''}" data-bs-toggle="pill" href=#` + key + `>${name}</a>
+                        </li>`;
 }
 
 window.addEventListener('load', (event) => {

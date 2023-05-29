@@ -9,10 +9,8 @@ var headerElement = `<div>
                 </div>
                 <div class="col-lg-6 px-5 text-end">
                     <small>Follow us:</small>
-                    <a class="text-body ms-3" href=""><i class="fab fa-facebook-f"></i></a>
-                    <a class="text-body ms-3" href=""><i class="fab fa-twitter"></i></a>
-                    <a class="text-body ms-3" href=""><i class="fab fa-linkedin-in"></i></a>
-                    <a class="text-body ms-3" href=""><i class="fab fa-instagram"></i></a>
+                    <a class="text-body ms-3" href="https://www.facebook.com/dadobaaoils/"><i class="fab fa-facebook-f"></i></a>
+                    <a class="text-body ms-3" href="https://www.instagram.com/dadobaa_wood_pressed_oils/"><i class="fab fa-instagram"></i></a>
                 </div>
             </div>
 
@@ -25,9 +23,9 @@ var headerElement = `<div>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarCollapse">
                     <div class="navbar-nav ms-auto p-4 p-lg-0">
-                        <a href="index.html" class="nav-item nav-link active">Home</a>
-                        <a href="about.html" class="nav-item nav-link">About Us</a>
-                        <a href="product.html" class="nav-item nav-link">Products</a>
+<!--                        <a href="index.html" class="nav-item nav-link active">Home</a>-->
+                        <!--<a href="about.html" class="nav-item nav-link">About Us</a>
+                        <a href="product.html" class="nav-item nav-link">Products</a>-->
                         <!--<div class="nav-item dropdown">
                             <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Pages</a>
                             <div class="dropdown-menu m-0">
@@ -37,7 +35,7 @@ var headerElement = `<div>
                                 <a href="404.html" class="dropdown-item">404 Page</a>
                             </div>
                         </div>-->
-                        <a href="contact.html" class="nav-item nav-link">Contact Us</a>
+<!--                        <a href="contact.html" class="nav-item nav-link">Contact Us</a>-->
                     </div>
                     <!--<div class="d-none d-lg-flex ms-2">
                         <a class="btn-sm-square bg-white rounded-circle ms-3" href="">
