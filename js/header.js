@@ -9,8 +9,8 @@ var headerElement = `<div>
                 </div>
                 <div class="col-lg-6 px-5 text-end">
                     <small>Follow us:</small>
-                    <a class="text-body ms-3" href="https://www.facebook.com/dadobaaoils/"><i class="fab fa-facebook-f"></i></a>
-                    <a class="text-body ms-3" href="https://www.instagram.com/dadobaa_wood_pressed_oils/"><i class="fab fa-instagram"></i></a>
+                    <a class="text-body ms-3" href="https://www.facebook.com/dadobaaoils/" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                    <a class="text-body ms-3" href="https://www.instagram.com/dadobaa_wood_pressed_oils/" target="_blank"><i class="fab fa-instagram"></i></a>
                 </div>
             </div>
 
