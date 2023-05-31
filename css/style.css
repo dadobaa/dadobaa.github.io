@@ -18,6 +18,12 @@
     filter: blur(2px);
 }
 
+.banner-product-img {
+    position: absolute;
+    bottom: 120px;
+    right: 120px;
+}
+
 .back-to-top {
     position: fixed;
     display: none;
