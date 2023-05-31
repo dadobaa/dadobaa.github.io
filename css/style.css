@@ -10,6 +10,14 @@
     font-size: .675em;
 }
 
+.brand-logo {
+    height: 60px;
+}
+
+.banner-img {
+    filter: blur(2px);
+}
+
 .back-to-top {
     position: fixed;
     display: none;

@@ -1,4 +1,4 @@
-var shop_location = 'Govandi, Mumbai: 400068';
+var shop_location = 'Govandi, Mumbai: 400088';
 
 var headerElement = `<div>
         <div class="container-fluid fixed-top px-0 wow fadeIn" data-wow-delay="0.1s">
@@ -16,7 +16,8 @@ var headerElement = `<div>
 
             <nav class="navbar navbar-expand-lg navbar-light py-lg-0 px-lg-5 wow fadeIn" data-wow-delay="0.1s">
                 <a href="index.html" class="navbar-brand ms-4 ms-lg-0">
-                    <h1 class="fw-bold text-primary m-0">DAD<span class="text-secondary">OO</span>BAA<span class="text-secondary"> OILS</span></h1>
+<!--                    <h1 class="fw-bold text-primary m-0">DAD<span class="text-secondary">OO</span>BAA<span class="text-secondary"> OILS</span></h1>-->
+                       <img src="/img/Brand-logo.jpeg" class="brand-logo"/>
                 </a>
                 <!--<button type="button" class="navbar-toggler me-4" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
                     <span class="navbar-toggler-icon"></span>
