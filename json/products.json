@@ -1,40 +1,138 @@
 {
   "tab1": {
     "name": "Oils",
-    "products": [{
-      "name": "Jai mata di",
-      "mrp": "43",
-      "discounted_mrp": "65",
-      "image-link": "img/product-1.jpg"
-    },{
-      "name": "Jai di",
-      "mrp": "43",
-      "discounted_mrp": "65",
-      "image-link": "img/product-2.jpg"
-    },{
-      "name": "mata di",
-      "mrp": "43",
-      "discounted_mrp": "65",
-      "image-link": "img/product-4.jpg"
-    }]
-  },
-  "tab2": {
-    "name": "Ghee",
-    "products": [{
-      "name": "Jai mata di",
-      "mrp": "43",
-      "discounted_mrp": "656",
-      "image-link": "img/product-5.jpg"
-    },{
-      "name": "Jai di",
-      "mrp": "43",
-      "discounted_mrp": "5",
-      "image-link": "img/product-7.jpg"
-    },{
-      "name": "mata di",
-      "mrp": "43",
-      "discounted_mrp": "6",
-      "image-link": "img/product-8.jpg"
-    }]
+    "products": [
+      {
+        "id": 1,
+        "name": "Groundnut Wood Pressed Oil",
+        "weight": "1 Litre",
+        "price": 320,
+        "whatsappLink": "https:\/\/wa.me\/p\/8747869361897820\/919820175000",
+        "image-link": "Groundnut-Wood-Pressed-Oil"
+      },
+      {
+        "id": 2,
+        "name": "White Sesame Wood Pressed Oil",
+        "weight": "1 Litre",
+        "price": 500,
+        "whatsappLink": "https:\/\/wa.me\/p\/5617035781721483\/919820175000",
+        "image-link": "White-Sesame-Wood-Pressed-Oil"
+      },
+      {
+        "id": 3,
+        "name": "Black Sesame Wood Pressed Oil",
+        "weight": "1 Litre",
+        "price": 520,
+        "whatsappLink": "https:\/\/wa.me\/p\/9387969467941591\/919820175000",
+        "image-link": "Black-Sesame-Wood-Pressed-Oil"
+      },
+      {
+        "id": 4,
+        "name": "Coconut Wood Pressed Oil",
+        "weight": "1 Litre",
+        "price": 500,
+        "whatsappLink": "https:\/\/wa.me\/p\/6630019307027386\/919820175000",
+        "image-link": "Coconut-Wood-Pressed-Oil"
+      },
+      {
+        "id": 5,
+        "name": "Almond Wood Pressed oil",
+        "weight": "100 ml",
+        "price": 350,
+        "Product Link": "https:\/\/drive.google.com\/file\/d\/1GLIsuS0IrA5BAZBDJ_46EHNY7qGtGCpZ\/view?usp=sharing",
+        "whatsappLink": "https:\/\/wa.me\/p\/6100466193399726\/919820175000",
+        "image-link": "Almond-Wood-Pressed-oil"
+      },
+      {
+        "id": 6,
+        "name": "Black Mustard Cold Pressed Oil",
+        "weight": "1 Litre",
+        "price": 400,
+        "Product Link": "https:\/\/drive.google.com\/file\/d\/14fUigGSEpTbpoSPgVFTTG8k784zHvN7k\/view?usp=sharing",
+        "whatsappLink": "https:\/\/wa.me\/p\/5741011422648557\/919820175000",
+        "image-link": "Black-Mustard-Cold-Pressed-Oil"
+      },
+      {
+        "id": 7,
+        "name": "Yellow Mustard Cold Pressed Oil",
+        "weight": "1 Litre",
+        "price": 380,
+        "Product Link": "https:\/\/drive.google.com\/file\/d\/1LCug0Ly1NWjovoxeORGHPHpa_LmyLdqC\/view?usp=drive_link",
+        "whatsappLink": "https:\/\/wa.me\/p\/6195637437179599\/919820175000",
+        "image-link": "Yellow-Mustard-Cold-Pressed-Oil"
+      },
+      {
+        "id": 8,
+        "name": "Kashmiri Mamra Almonds (Organic)",
+        "weight": "1 kg",
+        "price": 1440,
+        "Product Link": "https:\/\/drive.google.com\/file\/d\/13YL7XcCVEuvLu9RPyAc11SkNzc1dkpw8\/view?usp=sharing",
+        "whatsappLink": "https:\/\/wa.me\/p\/5890546241002265\/919820175000",
+        "image-link": "Kashmiri-Mamra-Almonds-(Organic)"
+      },
+      {
+        "id": 9,
+        "name": "Kashmiri Walnut Kernels (Organic)",
+        "weight": "1 kg",
+        "price": 1250,
+        "Product Link": "https:\/\/drive.google.com\/file\/d\/1EuNO8qS7TCxIsJE3-_1A7yvMt_Vcix3g\/view?usp=sharing",
+        "whatsappLink": "https:\/\/wa.me\/p\/5343708529091806\/919820175000",
+        "image-link": "Kashmiri-Walnut-Kernels-(Organic)"
+      },
+      {
+        "id": 10,
+        "name": "Cranberries",
+        "weight": "1 kg",
+        "price": 1100,
+        "Product Link": "https:\/\/drive.google.com\/file\/d\/1FzBv1m51IA0vuKvAVndUOjCAHu_kEHjd\/view?usp=sharing",
+        "whatsappLink": "https:\/\/wa.me\/p\/8395272807214593\/919820175000",
+        "image-link": "Cranberries"
+      },
+      {
+        "id": 11,
+        "name": "Blackberries",
+        "weight": "1 kg",
+        "price": 1100,
+        "Product Link": "https:\/\/drive.google.com\/file\/d\/1Fpu3egDmkV8tk_QHxFdN-dR5OWvXXN95\/view?usp=sharing",
+        "whatsappLink": "https:\/\/wa.me\/p\/6829917407035668\/919820175000",
+        "image-link": "Blackberries"
+      },
+      {
+        "id": 13,
+        "name": "Coconut Sugar",
+        "weight": "250 gm",
+        "price": 199,
+        "Product Link": "https:\/\/drive.google.com\/file\/d\/13PN6w9iBeVcf7xr7g1TuFo3-zEz9NVws\/view?usp=sharing",
+        "whatsappLink": "https:\/\/wa.me\/p\/6254373491305264\/919820175000",
+        "image-link": "Coconut-Sugar"
+      },
+      {
+        "id": 14,
+        "name": "Kashmiri Organic Saffron",
+        "weight": "1 gm",
+        "price": 210,
+        "Product Link": "https:\/\/drive.google.com\/file\/d\/1LlZfkqN0Lzkq0pubpgF_fEi22rjrSkzw\/view?usp=sharing",
+        "whatsappLink": "https:\/\/wa.me\/p\/5190266447746588\/919820175000",
+        "image-link": "Kashmiri-Organic-Saffron"
+      },
+      {
+        "id": 15,
+        "name": "Castor Cold Pressed Oil",
+        "weight": "100 ml",
+        "price": 170,
+        "Product Link": "https:\/\/drive.google.com\/file\/d\/1Fio7yryHnVCbn0ePIhKF4eyBANEuWEO8\/view?usp=sharing",
+        "whatsappLink": "https:\/\/wa.me\/p\/5560104297398733\/919820175000",
+        "image-link": "Castor-Cold-Pressed-Oil"
+      },
+      {
+        "id": 16,
+        "name": "A2 Bilona Gir Cow Ghee",
+        "weight": "500 ml",
+        "price": 1100,
+        "Product Link": "https:\/\/drive.google.com\/file\/d\/13khLrmaqFSF177BUEuQhn_nZntam-v0y\/view?usp=sharing",
+        "whatsappLink": "https:\/\/wa.me\/p\/6033942086625154\/919820175000",
+        "image-link": "A2-Bilona-Gir-Cow-Ghee"
+      }
+    ]
   }
 }

@@ -6,26 +6,26 @@ function makeRow() {
 
 function makeElement(data) {
     const link = data["image-link"];
-    var ProductElement = ` <div class="col-xl-3 col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+
+    const IndividualElement = `<div class="col-xl-3 col-lg-4 col-md-6 wow fadeInUp mb-4" data-wow-delay="0.1s">
                             <div class="product-item">
                                 <div class="position-relative bg-light overflow-hidden">
-                                    <img class="img-fluid w-100" src=` + link + ` alt="">
-                                    <div class="bg-secondary rounded text-white position-absolute start-0 top-0 m-4 py-1 px-3">New</div>
+                                    <img class="img-fluid w-100" src=` + 'img/products/' + link + '.jpg' + ` alt=` + data.name + `>
                                 </div>
-                                <div class="text-center p-4">
+                                <div class="text-center p-3">
                                     <span class="d-block h5 mb-2">${data.name}</span>
-                                    <span class="text-primary me-1">Rs${data.mrp}</span>
-                                    <span class="text-body text-decoration-line-through">Rs${data.discounted_mrp}</span>
+                                    <span class="text-primary me-1">Rs ${data.price}</span>
+                                    <span class="text-dark me-1 d-block x-small">[${data.weight}]</span>
                                 </div>
                                 <div class="d-flex border-top">
                                     <small class="w-100 text-center py-2">
-                                        <a class="text-body" href=""><i class="fa fa-shopping-bag text-primary me-2"></i>Add to cart</a>
+                                        <a class="text-body" href=` + data.whatsappLink + ` target="_blank"><i class="fa fa-shopping-bag text-primary me-2"></i>Order Now</a>
                                     </small>
                                 </div>
                             </div>
                         </div>`
 
-    return ProductElement;
+    return IndividualElement;
 }
 
 function loopOnPronducts(items) {
