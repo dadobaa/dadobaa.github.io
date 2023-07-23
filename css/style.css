@@ -178,6 +178,15 @@
     z-index: 1;
 }
 
+.hero-content {
+    background: rgba(255, 255, 255, 0.12);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    padding: 24px;
+}
+
 .carousel-control-prev,
 .carousel-control-next {
     width: 15%;
@@ -278,9 +287,24 @@
 }
 
 .video {
-    width: 310px;
+    width: 500px;
     height: 550px;
     z-index: 3;
+}
+
+#video-icon {
+    background: rgba(255,255,255,0.8);
+    padding: 24px;
+    width: max-content;
+    position: absolute;
+    bottom: 54px;
+    right: 29px;
+    border-radius: 4px;
+}
+
+#video-icon i {
+    font-size: 32px;
+    color: black;
 }
 
 

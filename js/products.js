@@ -76,7 +76,6 @@ function makeCategoriesTab (key, name, index) {
 
 window.addEventListener('load', (event) => {
     readJson().then((data) => {
-        console.log('json', data)
         loopOnCategories(data);
     }).catch(e => console.log('readJson', e));
 });

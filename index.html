@@ -33,6 +33,7 @@
     <!--    Header Javascript-->
     <script src="./js/header.js"></script>
     <script src="./js/products.js"></script>
+    <script src="./js/video.js"></script>
 </head>
 
 <body>
@@ -52,12 +53,12 @@
         <div id="header-carousel" class="carousel slide" data-bs-ride="carousel">
             <div class="carousel-inner">
                 <div class="carousel-item active">
-                    <img class="w-100" src="img/bg-icon.png" alt="Image">
+                    <img class="w-100" src="img/Banner-2.png" alt="Image">
 <!--                    <img class="banner-product-img" src="img/Banner-product.png" alt="Image">-->
                     <div class="carousel-caption">
                         <div class="container">
                             <div class="row justify-content-start">
-                                <div class="col-lg-7">
+                                <div class="col-lg-7 hero-content">
                                     <h1 class="display-2 mb-1 animated slideInDown">Pure, Natural, and Nourishing</h1>
                                     <h6 class="body-6 mb-5 animated slideInDown">Experience the Essence of Purity</h6>
                                     <a href="https://www.jiomart.com/groceries/b/dadobaa/14885" class="btn btn-primary rounded-pill py-sm-3 px-sm-5" target="_blank">Order now from JioMart</a>
@@ -103,9 +104,12 @@
             <div class="row g-5 align-items-center">
                 <div class="col-lg-6 wow fadeIn" data-wow-delay="0.1s">
                     <div class="about-img position-relative overflow-hidden p-5 pe-0">
-                        <video onclick="this.play()" class="video" playsinline>
-                            <source src="img/Extraction-Video.mp4" type="video/mp4">
+                        <video onclick="this.paused ? this.play() : this.pause(); arguments[0].preventDefault();" class="video" id="video" playsinline>
+                            <source src="img/Extraction-Video-2.mp4" type="video/mp4">
                         </video>
+                        <div id="video-icon">
+                            <i class="fa fa-play fa-solid"></i>
+                        </div>
                     </div>
                 </div>
                 <div class="col-lg-6 wow fadeIn" data-wow-delay="0.5s">
