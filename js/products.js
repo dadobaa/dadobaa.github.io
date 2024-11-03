@@ -14,7 +14,7 @@ function makeElement(data) {
                                 </div>
                                 <div class="text-center p-3">
                                     <span class="d-block h5 mb-2">${data.name}</span>
-                                    <span class="text-primary me-1">Rs ${data.price}</span>
+<!--                                    <span class="text-primary me-1">Rs ${data.price}</span>-->
                                     <span class="text-dark me-1 d-block x-small">[${data.weight}]</span>
                                 </div>
                                 <div class="d-flex border-top">
