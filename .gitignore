@@ -1,0 +1,15 @@
+# macOS
+.DS_Store
+._*
+
+# Editors
+.idea/
+.vscode/
+*.swp
+
+# Node (only used by the optional build scripts)
+node_modules/
+npm-debug.log*
+
+# Originals kept outside the repo when re-optimising images
+img/_originals/

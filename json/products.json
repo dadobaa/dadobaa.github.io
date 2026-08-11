@@ -1,231 +1,284 @@
 {
-  "tab1": {
-    "name": "Oils",
-    "products": [
-      {
-        "id": 1,
-        "name": "Groundnut Wood Pressed Oil",
-        "weight": "950 ml",
-        "price": 480,
-        "whatsappLink": "https://wa.me/p/8113181328718023/919820175000",
-        "image-link": "Groundnut-Wood-Pressed-Oil"
-      },
-      {
-        "id": 2,
-        "name": "White Sesame Wood Pressed Oil",
-        "weight": "950 ml",
-        "price": 720,
-        "whatsappLink": "https://wa.me/p/26580553651589156/919820175000",
-        "image-link": "White-Sesame-Wood-Pressed-Oil"
-      },
-      {
-        "id": 3,
-        "name": "Black Sesame Wood Pressed Oil",
-        "weight": "950 ml",
-        "price": 720,
-        "whatsappLink": "https://wa.me/p/8156676044382192/919820175000",
-        "image-link": "Black-Sesame-Wood-Pressed-Oil"
-      },
-      {
-        "id": 4,
-        "name": "Coconut Wood Pressed Oil",
-        "weight": "950 ml",
-        "price": 720,
-        "whatsappLink": "https://wa.me/p/8589922877727151/919820175000",
-        "image-link": "Coconut-Wood-Pressed-Oil"
-      },
-      {
-        "id": 5,
-        "name": "Almond Wood Pressed oil",
-        "weight": "100 ml",
-        "price": 500,
-        "whatsappLink": "https://wa.me/919820175000",
-        "image-link": "Almond-Wood-Pressed-oil"
-      },
-      {
-        "id": 6,
-        "name": "Black Mustard Cold Pressed Oil",
-        "weight": "950 ml",
-        "price": 670,
-        "whatsappLink": "https://wa.me/p/8418987268122354/919820175000",
-        "image-link": "Black-Mustard-Cold-Pressed-Oil"
-      },
-      {
-        "id": 7,
-        "name": "Yellow Mustard Cold Pressed Oil",
-        "weight": "950 ml",
-        "price": 670,
-        "whatsappLink": "https://wa.me/p/8973024049380406/919820175000",
-        "image-link": "Yellow-Mustard-Cold-Pressed-Oil"
-      },
-      {
-        "id": 8,
-        "name": "Extra Virgin Olive Oil (Cold Pressed)",
-        "weight": "950 ml",
-        "price": 2000,
-        "whatsappLink": "https://wa.me/p/9156025557857378/919820175000",
-        "image-link": "Extra-Virigin-Olive-Oil"
-      },
-      {
-        "id": 9,
-        "name": "Sunflower Wood Pressed Oil",
-        "weight": "950 ml",
-        "price": 670,
-        "whatsappLink": "https://wa.me/p/27010613461857199/919820175000",
-        "image-link": "Sunflower-Oil"
-      },
-      {
-        "id": 10,
-        "name": "Safflower Wood Pressed Oil",
-        "weight": "950 ml",
-        "price": 670,
-        "whatsappLink": "https://wa.me/p/27093054486959699/919820175000",
-        "image-link": "Safflower-Oil"
-      },
-      {
-        "id": 11,
-        "name": "Kashmiri Mamra Almonds (Organic)",
-        "weight": "1 kg",
-        "price": 1640,
-        "whatsappLink": "https://wa.me/919820175000",
-        "image-link": "Kashmiri-Mamra-Almonds-(Organic)"
-      },
-      {
-        "id": 12,
-        "name": "Kashmiri Walnut Kernels (Organic)",
-        "weight": "1 kg",
-        "price": 1540,
-        "whatsappLink": "https://wa.me/919820175000",
-        "image-link": "Kashmiri-Walnut-Kernels-(Organic)"
-      },
-      {
-        "id": 13,
-        "name": "Cranberries",
-        "weight": "1 kg",
-        "price": 1100,
-        "whatsappLink": "https://wa.me/919820175000",
-        "image-link": "Cranberries"
-      },
-      {
-        "id": 14,
-        "name": "Kashmiri Organic Saffron",
-        "weight": "1 gm",
-        "price": 350,
-        "whatsappLink": "https://wa.me/919820175000",
-        "image-link": "Kashmiri-Organic-Saffron"
-      },
-      {
-        "id": 15,
-        "name": "Castor Cold Pressed Oil",
-        "weight": "100 ml",
-        "price": 250,
-        "whatsappLink": "https://wa.me/919820175000",
-        "image-link": "Castor-Cold-Pressed-Oil"
-      },
-      {
-        "id": 16,
-        "name": "A2 Bilona Cow Ghee",
-        "weight": "1000 ml",
-        "price": 3000,
-        "whatsappLink": "https://wa.me/p/9614005988713986/919820175000",
-        "image-link": "A2-Bilona-Cow-Ghee"
-      },
-      {
-        "id": 17,
-        "name": "Rosemary Essential Oil",
-        "weight": "15 ml",
-        "price": 180,
-        "whatsappLink": "https://wa.me/919820175000",
-        "image-link": "Rosemary-Essential-Oil"
-      },
-      {
-        "id": 18,
-        "name": "Lemon Essential Oil",
-        "weight": "15 ml",
-        "price": 140,
-        "whatsappLink": "https://wa.me/919820175000",
-        "image-link": "Lemon-Essential-Oil"
-      },
-      {
-        "id": 19,
-        "name": "Eucalyptus Essential Oil",
-        "weight": "15 ml",
-        "price": 140,
-        "whatsappLink": "https://wa.me/919820175000",
-        "image-link": "Eucalyptus-Essential-Oil"
-      },
-      {
-        "id": 20,
-        "name": "Tea Tree Essential Oil",
-        "weight": "15 ml",
-        "price": 140,
-        "whatsappLink": "https://wa.me/919820175000",
-        "image-link": "Tea-Tree-Essential-Oil"
-      },
-      {
-        "id": 21,
-        "name": "Argan Oil",
-        "weight": "50 ml",
-        "price": 340,
-        "whatsappLink": "https://wa.me/919820175000",
-        "image-link": "Argan-Oil"
-      },
-      {
-        "id": 22,
-        "name": "Cold Pressed Amla Oil",
-        "weight": "100 ml",
-        "price": 289,
-        "whatsappLink": "https://wa.me/919820175000",
-        "image-link": "Amla-Oil"
-      },
-      {
-        "id": 23,
-        "name": "Cold Pressed Black Seed Oil",
-        "weight": "100 ml",
-        "price": 340,
-        "whatsappLink": "https://wa.me/919820175000",
-        "image-link": "Black-Seed-Oil"
-      },
-      {
-        "id": 24,
-        "name": "Cold Pressed Neem Oil",
-        "weight": "100 ml",
-        "price": 120,
-        "whatsappLink": "https://wa.me/919820175000",
-        "image-link": "Neem-Oil"
-      },
-      {
-        "id": 25,
-        "name": "Cold Pressed Flax Seed Oil",
-        "weight": "100 ml",
-        "price": 150,
-        "whatsappLink": "https://wa.me/919820175000",
-        "image-link": "Flax-Seed-Oil"
-      },
-      {
-        "id": 26,
-        "name": "Steam Distilled Rose Water",
-        "weight": "100 ml",
-        "price": 220,
-        "whatsappLink": "https://wa.me/919820175000",
-        "image-link": "Steam-Distilled-Rose-Water"
-      },
-      {
-        "id": 27,
-        "name": "Fuller's Earth (Multani Mitti)",
-        "weight": "90 gms",
-        "price": 199,
-        "whatsappLink": "https://wa.me/919820175000",
-        "image-link": "Fuller's-Earth"
-      },
-      {
-        "id": 28,
-        "name": "Aloevera Gel",
-        "weight": "100 gms",
-        "price": 180,
-        "whatsappLink": "https://wa.me/919820175000",
-        "image-link": "Aloevera-Gel"
-      }
-    ]
-  }
+  "categories": [
+    {
+      "id": "cooking-oils",
+      "name": "Cooking Oils & Ghee",
+      "blurb": "Wood pressed and cold pressed edible oils, extracted slowly at low temperature so the aroma and nutrients stay intact.",
+      "products": [
+        {
+          "id": 1,
+          "name": "Groundnut Wood Pressed Oil",
+          "desc": "Traditional lakdi ghani groundnut oil with a rich, nutty aroma. Ideal for everyday Indian cooking and deep frying.",
+          "weight": "950 ml",
+          "price": 480,
+          "whatsappLink": "https://wa.me/p/8113181328718023/919820175000",
+          "image": "Groundnut-Wood-Pressed-Oil"
+        },
+        {
+          "id": 2,
+          "name": "White Sesame Wood Pressed Oil",
+          "desc": "Cold extracted white sesame (til) oil. Light, versatile and traditionally used for cooking and oil pulling.",
+          "weight": "950 ml",
+          "price": 720,
+          "whatsappLink": "https://wa.me/p/26580553651589156/919820175000",
+          "image": "White-Sesame-Wood-Pressed-Oil"
+        },
+        {
+          "id": 3,
+          "name": "Black Sesame Wood Pressed Oil",
+          "desc": "Robust black sesame oil pressed on a wooden ghani. Deeply aromatic, rich in natural antioxidants.",
+          "weight": "950 ml",
+          "price": 720,
+          "whatsappLink": "https://wa.me/p/8156676044382192/919820175000",
+          "image": "Black-Sesame-Wood-Pressed-Oil"
+        },
+        {
+          "id": 4,
+          "name": "Coconut Wood Pressed Oil",
+          "desc": "Unrefined wood pressed coconut oil with a natural sweet aroma. Suitable for cooking, hair and skin.",
+          "weight": "950 ml",
+          "price": 720,
+          "whatsappLink": "https://wa.me/p/8589922877727151/919820175000",
+          "image": "Coconut-Wood-Pressed-Oil"
+        },
+        {
+          "id": 5,
+          "name": "Almond Wood Pressed Oil",
+          "desc": "Pure wood pressed almond oil. Light and nutrient dense, used both in the kitchen and for skin and hair care.",
+          "weight": "100 ml",
+          "price": 500,
+          "whatsappLink": "https://wa.me/919820175000",
+          "image": "Almond-Wood-Pressed-oil"
+        },
+        {
+          "id": 6,
+          "name": "Black Mustard Cold Pressed Oil",
+          "desc": "Sharp, pungent kachi ghani black mustard oil. A staple of Bengali, Bihari and North Indian kitchens.",
+          "weight": "950 ml",
+          "price": 670,
+          "whatsappLink": "https://wa.me/p/8418987268122354/919820175000",
+          "image": "Black-Mustard-Cold-Pressed-Oil"
+        },
+        {
+          "id": 7,
+          "name": "Yellow Mustard Cold Pressed Oil",
+          "desc": "Milder than black mustard, with a clean golden colour. Great for tempering, pickling and everyday cooking.",
+          "weight": "950 ml",
+          "price": 670,
+          "whatsappLink": "https://wa.me/p/8973024049380406/919820175000",
+          "image": "Yellow-Mustard-Cold-Pressed-Oil"
+        },
+        {
+          "id": 8,
+          "name": "Extra Virgin Olive Oil (Cold Pressed)",
+          "desc": "First press extra virgin olive oil. Best used raw over salads, dips and finished dishes.",
+          "weight": "950 ml",
+          "price": 2000,
+          "whatsappLink": "https://wa.me/p/9156025557857378/919820175000",
+          "image": "Extra-Virigin-Olive-Oil"
+        },
+        {
+          "id": 9,
+          "name": "Sunflower Wood Pressed Oil",
+          "desc": "Light, neutral tasting wood pressed sunflower oil. A everyday all rounder that does not mask flavours.",
+          "weight": "950 ml",
+          "price": 670,
+          "whatsappLink": "https://wa.me/p/27010613461857199/919820175000",
+          "image": "Sunflower-Oil"
+        },
+        {
+          "id": 10,
+          "name": "Safflower Wood Pressed Oil",
+          "desc": "Traditional kardi oil, wood pressed and unrefined. Light bodied with a clean finish.",
+          "weight": "950 ml",
+          "price": 670,
+          "whatsappLink": "https://wa.me/p/27093054486959699/919820175000",
+          "image": "Safflower-Oil"
+        },
+        {
+          "id": 16,
+          "name": "A2 Bilona Cow Ghee",
+          "desc": "Hand churned A2 ghee made the bilona way from curd, not cream. Grainy texture and a deep roasted aroma.",
+          "weight": "1000 ml",
+          "price": 3000,
+          "whatsappLink": "https://wa.me/p/9614005988713986/919820175000",
+          "image": "A2-Bilona-Cow-Ghee"
+        }
+      ]
+    },
+    {
+      "id": "hair-skin-care",
+      "name": "Hair & Skin Care",
+      "blurb": "Cold pressed carrier oils and single ingredient skincare, with nothing added and nothing refined out.",
+      "products": [
+        {
+          "id": 15,
+          "name": "Castor Cold Pressed Oil",
+          "desc": "Thick, cold pressed castor oil. Traditionally used for hair growth, lashes, brows and dry skin.",
+          "weight": "100 ml",
+          "price": 250,
+          "whatsappLink": "https://wa.me/919820175000",
+          "image": "Castor-Cold-Pressed-Oil"
+        },
+        {
+          "id": 21,
+          "name": "Argan Oil",
+          "desc": "Lightweight argan oil rich in vitamin E. Absorbs quickly, used for frizz control and facial hydration.",
+          "weight": "50 ml",
+          "price": 340,
+          "whatsappLink": "https://wa.me/919820175000",
+          "image": "Argan-Oil"
+        },
+        {
+          "id": 22,
+          "name": "Cold Pressed Amla Oil",
+          "desc": "Amla (Indian gooseberry) oil, cold pressed. A classic remedy for scalp health and premature greying.",
+          "weight": "100 ml",
+          "price": 289,
+          "whatsappLink": "https://wa.me/919820175000",
+          "image": "Amla-Oil"
+        },
+        {
+          "id": 23,
+          "name": "Cold Pressed Black Seed Oil",
+          "desc": "Kalonji oil, cold pressed and unrefined. Valued in traditional medicine for immunity, skin and hair.",
+          "weight": "100 ml",
+          "price": 340,
+          "whatsappLink": "https://wa.me/919820175000",
+          "image": "Black-Seed-Oil"
+        },
+        {
+          "id": 24,
+          "name": "Cold Pressed Neem Oil",
+          "desc": "Pure neem oil with its characteristic sharp aroma. Used for acne prone skin, scalp care and as a natural pest deterrent.",
+          "weight": "100 ml",
+          "price": 120,
+          "whatsappLink": "https://wa.me/919820175000",
+          "image": "Neem-Oil"
+        },
+        {
+          "id": 25,
+          "name": "Cold Pressed Flax Seed Oil",
+          "desc": "Alsi oil, cold pressed to protect its omega 3 content. Use raw, never heated.",
+          "weight": "100 ml",
+          "price": 150,
+          "whatsappLink": "https://wa.me/919820175000",
+          "image": "Flax-Seed-Oil"
+        },
+        {
+          "id": 26,
+          "name": "Steam Distilled Rose Water",
+          "desc": "Pure steam distilled rose water with no added fragrance or preservative. A natural toner and face mist.",
+          "weight": "100 ml",
+          "price": 220,
+          "whatsappLink": "https://wa.me/919820175000",
+          "image": "Steam-Distilled-Rose-Water"
+        },
+        {
+          "id": 27,
+          "name": "Fuller's Earth (Multani Mitti)",
+          "desc": "Natural multani mitti clay. A time tested face pack for oily skin and gentle deep cleansing.",
+          "weight": "90 gms",
+          "price": 199,
+          "whatsappLink": "https://wa.me/919820175000",
+          "image": "Fuller's-Earth"
+        },
+        {
+          "id": 28,
+          "name": "Aloevera Gel",
+          "desc": "Soothing aloe vera gel for sunburn, irritation and daily hydration. Light and non sticky.",
+          "weight": "100 gms",
+          "price": 180,
+          "whatsappLink": "https://wa.me/919820175000",
+          "image": "Aloevera-Gel"
+        }
+      ]
+    },
+    {
+      "id": "essential-oils",
+      "name": "Essential Oils",
+      "blurb": "Concentrated steam distilled essential oils for aromatherapy, diffusers and diluted topical use.",
+      "products": [
+        {
+          "id": 17,
+          "name": "Rosemary Essential Oil",
+          "desc": "Steam distilled rosemary oil, popular for scalp massage and hair thinning when diluted in a carrier oil.",
+          "weight": "15 ml",
+          "price": 180,
+          "whatsappLink": "https://wa.me/919820175000",
+          "image": "Rosemary-Essential-Oil"
+        },
+        {
+          "id": 18,
+          "name": "Lemon Essential Oil",
+          "desc": "Bright, citrus lemon essential oil. Uplifting in a diffuser and a natural cleaning booster.",
+          "weight": "15 ml",
+          "price": 140,
+          "whatsappLink": "https://wa.me/919820175000",
+          "image": "Lemon-Essential-Oil"
+        },
+        {
+          "id": 19,
+          "name": "Eucalyptus Essential Oil",
+          "desc": "Sharp, cooling eucalyptus oil. Commonly used in steam inhalation and for congestion relief.",
+          "weight": "15 ml",
+          "price": 140,
+          "whatsappLink": "https://wa.me/919820175000",
+          "image": "Eucalyptus-Essential-Oil"
+        },
+        {
+          "id": 20,
+          "name": "Tea Tree Essential Oil",
+          "desc": "Tea tree oil with natural antibacterial properties. Used on blemishes and dandruff, always diluted.",
+          "weight": "15 ml",
+          "price": 140,
+          "whatsappLink": "https://wa.me/919820175000",
+          "image": "Tea-Tree-Essential-Oil"
+        }
+      ]
+    },
+    {
+      "id": "dry-fruits",
+      "name": "Dry Fruits & Superfoods",
+      "blurb": "Hand picked Kashmiri dry fruits and superfoods, sourced direct and sold unpolished.",
+      "products": [
+        {
+          "id": 11,
+          "name": "Kashmiri Mamra Almonds (Organic)",
+          "desc": "Genuine Kashmiri mamra badam. Smaller and oilier than commercial almonds, with a much richer taste.",
+          "weight": "1 kg",
+          "price": 1640,
+          "whatsappLink": "https://wa.me/919820175000",
+          "image": "Kashmiri-Mamra-Almonds-(Organic)"
+        },
+        {
+          "id": 12,
+          "name": "Kashmiri Walnut Kernels (Organic)",
+          "desc": "Light coloured Kashmiri akhrot kernels, hand shelled and unbleached.",
+          "weight": "1 kg",
+          "price": 1540,
+          "whatsappLink": "https://wa.me/919820175000",
+          "image": "Kashmiri-Walnut-Kernels-(Organic)"
+        },
+        {
+          "id": 13,
+          "name": "Cranberries",
+          "desc": "Naturally tart dried cranberries. Good in trail mixes, baking and breakfast bowls.",
+          "weight": "1 kg",
+          "price": 1100,
+          "whatsappLink": "https://wa.me/919820175000",
+          "image": "Cranberries"
+        },
+        {
+          "id": 14,
+          "name": "Kashmiri Organic Saffron",
+          "desc": "Pure Kashmiri Mongra saffron with deep red threads and a strong natural aroma. No colouring added.",
+          "weight": "1 gm",
+          "price": 350,
+          "whatsappLink": "https://wa.me/919820175000",
+          "image": "Kashmiri-Organic-Saffron"
+        }
+      ]
+    }
+  ]
 }

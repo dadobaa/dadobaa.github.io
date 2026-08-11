@@ -1,32 +1,58 @@
-/******* Customized Bootstrap ********/
+/******* Customized Bootstrap for dadobaa.in *******
+ *
+ * Only the components the site actually uses are imported. Adding a new
+ * Bootstrap component to the markup means adding its @import below and
+ * re-running `npm run build:css`.
+ */
 
+// ---- Theme ----
 $primary: #3CB815;
 $secondary: #F65005;
 $light: #F7F8FC;
 $dark: #111111;
 
 $font-family-base: 'Open Sans', sans-serif;
-
 $headings-font-family: 'Lora', serif;
 
 $body-color: #555555;
-
 $headings-color: $dark;
-
 $headings-font-weight: 600;
-
 $display-font-weight: 700;
 
-$enable-responsive-font-sizes: true;
-
 $border-radius: 0;
-
 $border-radius-sm: $border-radius;
-
 $border-radius-lg: $border-radius;
 
 $link-decoration: none;
-
 $enable-negative-margins: true;
 
-@import "bootstrap/scss/bootstrap";
+// Nothing on the site uses the dark colour mode, and it roughly doubles :root.
+$enable-dark-mode: false;
+
+// ---- Required ----
+@import "bootstrap/scss/functions";
+@import "bootstrap/scss/variables";
+@import "bootstrap/scss/variables-dark";
+@import "bootstrap/scss/maps";
+@import "bootstrap/scss/mixins";
+@import "bootstrap/scss/root";
+
+// ---- Layout & content ----
+@import "bootstrap/scss/reboot";
+@import "bootstrap/scss/type";
+@import "bootstrap/scss/images";
+@import "bootstrap/scss/containers";
+@import "bootstrap/scss/grid";
+
+// ---- Components in use ----
+@import "bootstrap/scss/transitions";   // .fade on tab panes
+@import "bootstrap/scss/buttons";       // .btn everywhere
+@import "bootstrap/scss/nav";           // .nav-pills category tabs
+@import "bootstrap/scss/navbar";        // header
+@import "bootstrap/scss/breadcrumb";    // about / contact
+@import "bootstrap/scss/spinners";      // page loading spinner
+
+// ---- Helpers & utility API ----
+@import "bootstrap/scss/helpers";
+@import "bootstrap/scss/utilities";
+@import "bootstrap/scss/utilities/api";

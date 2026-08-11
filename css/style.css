@@ -1,9 +1,48 @@
-/********** Template CSS **********/
+/********** Dadobaa Oils — site styles **********/
 :root {
     --primary: #3CB815;
     --secondary: #F65005;
     --light: #F7F8FC;
     --dark: #111111;
+
+    /* The brand green only reaches 2.6:1 against white, so white-on-green text
+       and green-on-white text fail WCAG AA. This darker green hits 4.76:1 and is
+       used wherever the colour actually carries text. --primary stays for fills,
+       borders and decorative icons. */
+    --primary-strong: #2B8410;
+    --primary-stronger: #23700C;
+}
+
+/* Accessible button colours */
+.btn-primary {
+    --bs-btn-bg: var(--primary-strong);
+    --bs-btn-border-color: var(--primary-strong);
+    --bs-btn-hover-bg: var(--primary-stronger);
+    --bs-btn-hover-border-color: var(--primary-stronger);
+    --bs-btn-active-bg: var(--primary-stronger);
+    --bs-btn-active-border-color: var(--primary-stronger);
+    --bs-btn-disabled-bg: var(--primary-strong);
+    --bs-btn-disabled-border-color: var(--primary-strong);
+}
+
+.btn-outline-primary {
+    --bs-btn-color: var(--primary-strong);
+    --bs-btn-border-color: var(--primary-strong);
+    --bs-btn-hover-bg: var(--primary-strong);
+    --bs-btn-hover-border-color: var(--primary-strong);
+    --bs-btn-active-bg: var(--primary-strong);
+    --bs-btn-active-border-color: var(--primary-strong);
+}
+
+/* Green text on white (prices, inline links) */
+.text-primary {
+    color: var(--primary-strong) !important;
+}
+
+/* Bootstrap derives .text-muted from the custom #555 body colour, which lands
+   at 3.9:1. Pin it to a value that passes. */
+.text-muted {
+    color: #6C757D !important;
 }
 
 .x-small {
@@ -12,24 +51,7 @@
 
 .brand-logo {
     height: 60px;
-}
-
-.banner-img {
-    filter: blur(2px);
-}
-
-.banner-product-img {
-    position: absolute;
-    bottom: 120px;
-    right: 120px;
-}
-
-.back-to-top {
-    position: fixed;
-    display: none;
-    right: 30px;
-    bottom: 30px;
-    z-index: 99;
+    width: auto;
 }
 
 .my-6 {
@@ -45,6 +67,21 @@
 .bg-icon {
     background: url(../img/bg-icon.png) center center repeat;
     background-size: contain;
+}
+
+/* Inline SVG sprite icons — replaces the Font Awesome / Bootstrap Icons webfonts. */
+.icon {
+    width: 1em;
+    height: 1em;
+    fill: currentColor;
+    vertical-align: -.125em;
+    display: inline-block;
+    flex-shrink: 0;
+}
+
+.icon-lg {
+    width: 1.75em;
+    height: 1.75em;
 }
 
 
@@ -63,10 +100,36 @@
 }
 
 
-/*** Button ***/
+/*** Scroll reveal (replaces WOW.js + animate.css) ***/
+[data-reveal] {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity .6s ease-out, transform .6s ease-out;
+    will-change: opacity, transform;
+}
+
+[data-reveal].is-revealed {
+    opacity: 1;
+    transform: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    [data-reveal] {
+        opacity: 1;
+        transform: none;
+        transition: none;
+    }
+
+    * {
+        scroll-behavior: auto !important;
+    }
+}
+
+
+/*** Buttons ***/
 .btn {
     font-weight: 500;
-    transition: .5s;
+    transition: .3s;
 }
 
 .btn.btn-primary,
@@ -95,30 +158,61 @@
 .btn-sm-square,
 .btn-lg-square {
     padding: 0;
-    display: flex;
+    display: inline-flex;
     align-items: center;
     justify-content: center;
     font-weight: normal;
 }
 
+/* Visible keyboard focus — the Bootstrap default is easy to lose on coloured backgrounds. */
+a:focus-visible,
+button:focus-visible {
+    outline: 3px solid var(--secondary);
+    outline-offset: 2px;
+}
+
+.back-to-top {
+    position: fixed;
+    right: 30px;
+    bottom: 30px;
+    z-index: 99;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity .3s, visibility .3s;
+}
+
+.back-to-top.is-visible {
+    opacity: 1;
+    visibility: visible;
+}
+
 
 /*** Navbar ***/
+/* Solid from the top: the hero photo is busy, and nav text sitting directly on
+   it was unreadable. The shadow only appears once the page starts scrolling. */
 .fixed-top {
-    transition: .5s;
+    background: #FFFFFF;
+    transition: top .3s, box-shadow .3s;
+}
+
+.fixed-top.is-scrolled {
+    box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .15);
+}
+
+/* Anchor jumps (#products) must clear the fixed header. */
+[id] {
+    scroll-margin-top: 100px;
+}
+
+@media (min-width: 992px) {
+    [id] {
+        scroll-margin-top: 90px;
+    }
 }
 
 .top-bar {
     height: 45px;
     border-bottom: 1px solid rgba(0, 0, 0, .07);
-}
-
-.navbar .dropdown-toggle::after {
-    border: none;
-    content: "\f107";
-    font-family: "Font Awesome 5 Free";
-    font-weight: 900;
-    vertical-align: middle;
-    margin-left: 8px;
 }
 
 .navbar .navbar-nav .nav-link {
@@ -143,122 +237,105 @@
     .navbar .navbar-nav .nav-link {
         padding: 10px 0;
     }
+
+    /* The collapsed menu must not run off a short screen. */
+    .navbar-collapse {
+        max-height: calc(100vh - 90px);
+        overflow-y: auto;
+        background: #FFFFFF;
+    }
+}
+
+
+/*** Hero ***/
+/* Sits below the fixed header rather than behind it (86px mobile, 119px desktop). */
+.hero-section {
+    position: relative;
+    margin-top: 86px;
 }
 
 @media (min-width: 992px) {
-    .navbar .nav-item .dropdown-menu {
-        display: block;
-        visibility: hidden;
-        top: 100%;
-        transform: rotateX(-75deg);
-        transform-origin: 0% 0%;
-        transition: .5s;
-        opacity: 0;
-    }
-
-    .navbar .nav-item:hover .dropdown-menu {
-        transform: rotateX(0deg);
-        visibility: visible;
-        transition: .5s;
-        opacity: 1;
+    .hero-section {
+        margin-top: 119px;
     }
 }
 
+.hero-img {
+    width: 100%;
+    height: clamp(420px, 62vh, 680px);
+    object-fit: cover;
+    display: block;
+}
 
-/*** Header ***/
-.carousel-caption {
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
+.hero-caption {
+    position: absolute;
+    inset: 0;
     display: flex;
     align-items: center;
-    justify-content: center;
-    text-align: start;
     z-index: 1;
 }
 
-.carousel-img {
-    object-fit: fill !important;
-}
-
 .hero-content {
-    background: rgba(255, 255, 255, 0.12);
+    background: rgba(255, 255, 255, 0.72);
     border-radius: 16px;
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-    backdrop-filter: blur(5px);
-    -webkit-backdrop-filter: blur(5px);
-    padding: 24px;
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+    padding: 32px;
+    max-width: 620px;
+}
+
+.hero-content h1 {
+    color: var(--dark);
 }
 
 @media (max-width: 740px) {
-    .hero-section {
-        margin-top: 82px;
-    }
     .hero-content {
-        width: 274px;
-        margin-left: 16px;
+        padding: 20px;
+        margin: 0 12px;
     }
+
     .hero-content h1 {
-        font-size: 24px;
-        max-width: 240px;
+        font-size: 26px;
     }
-    .hero-content h6 {
+
+    .hero-content p {
         font-size: 14px;
-        margin-bottom: 32px !important;
+        margin-bottom: 20px !important;
     }
-    .jiomart-btn {
+
+    .hero-content .btn {
         font-size: 14px;
-    }
-    .whatsapp-btn {
-        margin-left: 0 !important;
-        margin-top: 8px;
-        font-size: 14px;
-    }
-}
-
-
-.carousel-control-prev,
-.carousel-control-next {
-    width: 15%;
-}
-
-.carousel-control-prev-icon,
-.carousel-control-next-icon {
-    width: 3rem;
-    height: 3rem;
-    background-color: var(--primary);
-    border: 10px solid var(--primary);
-    border-radius: 3rem;
-}
-
-@media (max-width: 768px) {
-    #header-carousel .carousel-item {
-        position: relative;
-        min-height: 450px;
-    }
-
-    #header-carousel .carousel-item img {
-        position: absolute;
         width: 100%;
-        height: 100%;
-        object-fit: cover;
+    }
+
+    .hero-content .btn + .btn {
+        margin-left: 0 !important;
+        margin-top: 10px;
     }
 }
 
+
+/*** Page header (about / contact / 404) ***/
 .page-header {
     padding-top: 12rem;
     padding-bottom: 6rem;
-    background: url(../img/carousel-1.jpg) top right no-repeat;
+    background: linear-gradient(rgba(17, 17, 17, .45), rgba(17, 17, 17, .45)), url(../img/Banner.jpeg) center center no-repeat;
     background-size: cover;
 }
 
-.breadcrumb-item+.breadcrumb-item::before {
-    color: #999999;
+.page-header h1,
+.page-header .breadcrumb-item,
+.page-header .breadcrumb-item a {
+    color: #FFFFFF;
+}
+
+.breadcrumb-item + .breadcrumb-item::before {
+    color: #DDDDDD;
 }
 
 
-/*** Section Header ***/
+/*** Section header ***/
 .section-header {
     position: relative;
     padding-top: 25px;
@@ -293,8 +370,20 @@
 }
 
 
+/*** Feature icons ***/
+.feature-icon {
+    width: 64px;
+    height: 64px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: rgba(60, 184, 21, .12);
+    color: var(--primary-strong);
+}
 
-/*** About ***/
+
+/*** About / video ***/
 .about-img img {
     position: relative;
     z-index: 2;
@@ -308,57 +397,72 @@
     width: 100%;
     height: 100%;
     z-index: -1;
-    background-image: -webkit-repeating-radial-gradient(#FFFFFF, #EEEEEE 5px, transparent 5px, transparent 10px);
-    background-image: -moz-repeating-radial-gradient(#FFFFFF, #EEEEEE 5px, transparent 5px, transparent 10px);
-    background-image: -ms-repeating-radial-gradient(#FFFFFF, #EEEEEE 5px, transparent 5px, transparent 10px);
-    background-image: -o-repeating-radial-gradient(#FFFFFF, #EEEEEE 5px, transparent 5px, transparent 10px);
     background-image: repeating-radial-gradient(#FFFFFF, #EEEEEE 5px, transparent 5px, transparent 10px);
     background-size: 20px 20px;
     transform: skew(20deg);
 }
 
+.video-wrap {
+    position: relative;
+    max-width: 500px;
+}
+
 .video {
-    width: 500px;
+    width: 100%;
     max-width: 100%;
-    height: 550px;
+    height: auto;
+    aspect-ratio: 3 / 4;
+    object-fit: cover;
+    display: block;
+    border-radius: 8px;
+    background: #000;
     z-index: 3;
+    cursor: pointer;
 }
 
-#video-icon {
-    background: rgba(255,255,255,0.8);
-    padding: 24px;
-    width: max-content;
+#video-toggle {
+    background: rgba(255, 255, 255, 0.9);
+    border: 0;
+    padding: 18px;
+    line-height: 0;
     position: absolute;
-    bottom: 54px;
-    right: 29px;
-    border-radius: 4px;
+    bottom: 20px;
+    right: 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    z-index: 4;
+    transition: background .2s;
 }
 
-#video-icon i {
-    font-size: 32px;
-    color: black;
+#video-toggle:hover {
+    background: #FFFFFF;
+}
+
+#video-toggle .icon {
+    width: 28px;
+    height: 28px;
+    color: var(--dark);
 }
 
 @media (max-width: 740px) {
-    .video {
-        height: auto;
-    }
     .about-img {
         padding: 0 !important;
     }
-    #video-icon {
+
+    #video-toggle {
         padding: 12px;
-        right: 0;
-        bottom: 6px;
+        right: 10px;
+        bottom: 10px;
     }
-    #video-icon i {
-        font-size: 16px;
+
+    #video-toggle .icon {
+        width: 18px;
+        height: 18px;
     }
 }
 
 
-
-/*** Product ***/
+/*** Products ***/
 .nav-pills .nav-item .btn {
     color: var(--dark);
 }
@@ -366,81 +470,171 @@
 .nav-pills .nav-item .btn:hover,
 .nav-pills .nav-item .btn.active {
     color: #FFFFFF;
+    background: var(--primary-strong);
+    border-color: var(--primary-strong);
+}
+
+.category-blurb {
+    max-width: 760px;
+}
+
+/* Bootstrap only hides inactive panes via `.tab-content > .tab-pane`, which
+   needs the CLASS on the container. Repeat it against the id so the grid can
+   never end up with every category stacked on top of each other. */
+#tab-content > .tab-pane {
+    display: none;
+}
+
+#tab-content > .tab-pane.active {
+    display: block;
 }
 
 .product-item {
     box-shadow: 0 0 45px rgba(0, 0, 0, .07);
     border-radius: 12px;
     overflow: hidden;
+    background: #FFFFFF;
 }
 
-.product-item img {
-    transition: .5s;
+/* Fixed ratio keeps the grid tidy and reserves space, so images cause no layout shift. */
+.product-media {
+    aspect-ratio: 1 / 1;
 }
 
-.product-item:hover img {
-    transform: scale(1.1);
+.product-media img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform .5s;
+}
+
+.product-item:hover .product-media img {
+    transform: scale(1.08);
+}
+
+.product-title {
+    line-height: 1.35;
+}
+
+.product-price {
+    font-size: 1.05rem;
 }
 
 .product-item small a:hover {
     color: var(--primary) !important;
 }
 
+@media (max-width: 575.98px) {
+    .product-title {
+        font-size: .85rem;
+    }
 
-/*** Testimonial ***/
-.testimonial-carousel .owl-item .testimonial-item img {
-    width: 60px;
-    height: 60px;
+    .product-item .p-3 {
+        padding: .75rem !important;
+    }
 }
 
-.testimonial-carousel .owl-item .testimonial-item,
-.testimonial-carousel .owl-item .testimonial-item * {
-    transition: .5s;
+
+/*** Testimonials (CSS scroll-snap — replaces OwlCarousel) ***/
+.testimonial-track {
+    display: flex;
+    gap: 24px;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    padding: 1rem .25rem 1.5rem;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
 }
 
-.testimonial-carousel .owl-item.center .testimonial-item {
-    background: var(--primary) !important;
+.testimonial-track::-webkit-scrollbar {
+    display: none;
 }
 
-.testimonial-carousel .owl-item.center .testimonial-item * {
-    color: #FFFFFF !important;
+.testimonial-item {
+    scroll-snap-align: center;
+    flex: 0 0 calc(100% - 1rem);
+    background: #FFFFFF;
+    padding: 2.5rem;
+    border-radius: 12px;
+    position: relative;
+    box-shadow: 0 0 45px rgba(0, 0, 0, .06);
 }
 
-.testimonial-carousel .owl-item.center .testimonial-item i {
-    color: var(--secondary) !important;
+@media (min-width: 768px) {
+    .testimonial-item {
+        flex-basis: calc(50% - 12px);
+    }
 }
 
-.testimonial-carousel .owl-nav {
-    margin-top: 30px;
+@media (min-width: 992px) {
+    .testimonial-item {
+        flex-basis: calc(33.333% - 16px);
+    }
+}
+
+.testimonial-quote {
+    color: var(--primary-strong);
+    width: 2.5rem;
+    height: 2.5rem;
+    margin-bottom: .75rem;
+}
+
+.testimonial-nav {
     display: flex;
     justify-content: center;
+    gap: 24px;
+    margin-top: 10px;
 }
 
-.testimonial-carousel .owl-nav .owl-prev,
-.testimonial-carousel .owl-nav .owl-next {
-    margin: 0 12px;
+.testimonial-nav button {
     width: 50px;
     height: 50px;
-    display: flex;
+    display: inline-flex;
     align-items: center;
     justify-content: center;
     color: var(--dark);
-    border: 2px solid var(--primary);
+    background: transparent;
+    border: 2px solid var(--primary-strong);
     border-radius: 50px;
-    font-size: 18px;
-    transition: .5s;
+    transition: .3s;
 }
 
-.testimonial-carousel .owl-nav .owl-prev:hover,
-.testimonial-carousel .owl-nav .owl-next:hover {
+.testimonial-nav button:hover {
     color: #FFFFFF;
-    background: var(--primary);
+    background: var(--primary-strong);
+}
+
+.testimonial-nav .icon {
+    width: 1.25rem;
+    height: 1.25rem;
+}
+
+.prev-icon {
+    transform: rotate(-90deg);
+}
+
+.next-icon {
+    transform: rotate(90deg);
 }
 
 
 /*** Footer ***/
 .footer {
     color: #999999;
+}
+
+.footer a {
+    text-decoration: none;
+}
+
+.footer .footer-link {
+    color: #999999;
+    transition: .3s;
+}
+
+.footer .footer-link:hover {
+    color: var(--light);
 }
 
 .footer .btn.btn-link {
@@ -456,9 +650,7 @@
 
 .footer .btn.btn-link::before {
     position: relative;
-    content: "\f105";
-    font-family: "Font Awesome 5 Free";
-    font-weight: 900;
+    content: "\203A";
     color: #999999;
     margin-right: 10px;
 }
@@ -472,7 +664,7 @@
 .footer .copyright {
     padding: 25px 0;
     font-size: 15px;
-    border-top: 1px solid rgba(256, 256, 256, .1);
+    border-top: 1px solid rgba(255, 255, 255, .1);
 }
 
 .footer .copyright a {

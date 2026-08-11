@@ -1,0 +1,16 @@
+{
+  "name": "dadobaa-site",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Static marketing site for Dadobaa Oils (dadobaa.in)",
+  "scripts": {
+    "serve": "npx --yes serve -l 8080 .",
+    "optimise:img": "node scripts/optimise-images.js",
+    "build:css": "sass --no-source-map --style=compressed scss/bootstrap.scss css/bootstrap.min.css"
+  },
+  "devDependencies": {
+    "bootstrap": "^5.3.3",
+    "sass": "^1.77.0",
+    "sharp": "^0.35.0"
+  }
+}
