@@ -13,7 +13,6 @@
     address: 'Govandi, Mumbai 400088',
     maps: 'https://maps.app.goo.gl/wuixdATZgGjNWyZy6',
     whatsappCatalogue: 'https://wa.me/c/919820175000',
-    store: 'https://dadobaa.mini.store',
     jiomart: 'https://www.jiomart.com/groceries/b/dadobaa-oils/14875',
     facebook: 'https://www.facebook.com/dadobaaoils/',
     instagram: 'https://www.instagram.com/dadobaa_wood_pressed_oils/'
@@ -122,8 +121,7 @@
             '<p><svg class="icon me-3" aria-hidden="true"><use href="#i-envelope"></use></svg>' +
               '<a class="footer-link" href="mailto:' + BIZ.email + '">' + BIZ.email + '</a></p>' +
             '<p class="mb-0"><svg class="icon me-3" aria-hidden="true"><use href="#i-shop"></use></svg>' +
-              'Also on <a class="footer-link" href="' + BIZ.jiomart + '" target="_blank" rel="noopener">JioMart</a>' +
-              ' &amp; <a class="footer-link" href="' + BIZ.store + '" target="_blank" rel="noopener">our online store</a></p>' +
+              'Also on <a class="footer-link" href="' + BIZ.jiomart + '" target="_blank" rel="noopener">JioMart</a></p>' +
           '</div>' +
         '</div>' +
       '</div>' +
