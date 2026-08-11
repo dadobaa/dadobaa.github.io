@@ -46,7 +46,7 @@ function card(p, eager) {
                 </picture>
               </div>
               <div class="text-center p-3 flex-grow-1 d-flex flex-column">
-                <h3 class="h6 mb-1 product-title">${esc(p.name)}</h3>
+                <h3 class="h6 mb-1 product-title"><a class="text-body text-decoration-none" href="/products/${p.slug}.html">${esc(p.name)}</a></h3>
                 <span class="d-block text-muted x-small mb-2">${esc(p.weight)}</span>
                 <span class="d-block text-primary fw-bold mt-auto product-price">₹${esc(p.price)}</span>
               </div>
@@ -109,7 +109,7 @@ function schema(categories) {
           price: p.price,
           priceCurrency: 'INR',
           availability: 'https://schema.org/InStock',
-          url: p.whatsappLink,
+          url: SITE + '/products/' + p.slug + '.html',
           seller: { '@type': 'Organization', name: 'Dadobaa Oils' }
         }
       }

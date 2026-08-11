@@ -13,6 +13,8 @@ index.html          Home: hero, why-us, process video, product grid, testimonial
 about.html          "Our Process" — how the oil is pressed, plus FAQ
 contact.html        Ways to order, address, marketplace links
 404.html            Not-found page (uses absolute paths — see note below)
+cold-pressed-oil-mumbai.html   Local landing page
+products/*.html     28 generated product pages — do not hand-edit
 
 json/products.json  The catalogue. Editing this file is how you change products.
 js/layout.js        Shared header + footer, injected into #header / #footer
@@ -46,13 +48,13 @@ photo in as `img/products/Avocado-Oil.jpg`, then run:
 
 ```sh
 npm install
-npm run optimise:img      # resize + generate .webp / .avif
-npm run build:catalogue   # render products.json into index.html
+npm run optimise:img   # resize + generate .webp / .avif
+npm run build          # regenerate product pages AND the homepage grid
 ```
 
 Commit the generated images **and** the updated `index.html`.
 
-> **`npm run build:catalogue` is not optional.** The product grid, the category
+> **`npm run build` is not optional.** The product grid, the category
 > tabs and the Product structured data are baked into `index.html` as static
 > HTML between `<!-- CATALOGUE:*:START -->` markers. Editing `products.json`
 > alone changes nothing on the site.

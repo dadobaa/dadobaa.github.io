@@ -12,7 +12,8 @@
           "weight": "950 ml",
           "price": 480,
           "whatsappLink": "https://wa.me/p/8113181328718023/919820175000",
-          "image": "Groundnut-Wood-Pressed-Oil"
+          "image": "Groundnut-Wood-Pressed-Oil",
+          "slug": "groundnut-wood-pressed-oil"
         },
         {
           "id": 2,
@@ -21,7 +22,8 @@
           "weight": "950 ml",
           "price": 720,
           "whatsappLink": "https://wa.me/p/26580553651589156/919820175000",
-          "image": "White-Sesame-Wood-Pressed-Oil"
+          "image": "White-Sesame-Wood-Pressed-Oil",
+          "slug": "white-sesame-wood-pressed-oil"
         },
         {
           "id": 3,
@@ -30,7 +32,8 @@
           "weight": "950 ml",
           "price": 720,
           "whatsappLink": "https://wa.me/p/8156676044382192/919820175000",
-          "image": "Black-Sesame-Wood-Pressed-Oil"
+          "image": "Black-Sesame-Wood-Pressed-Oil",
+          "slug": "black-sesame-wood-pressed-oil"
         },
         {
           "id": 4,
@@ -39,7 +42,8 @@
           "weight": "950 ml",
           "price": 720,
           "whatsappLink": "https://wa.me/p/8589922877727151/919820175000",
-          "image": "Coconut-Wood-Pressed-Oil"
+          "image": "Coconut-Wood-Pressed-Oil",
+          "slug": "coconut-wood-pressed-oil"
         },
         {
           "id": 5,
@@ -48,7 +52,8 @@
           "weight": "100 ml",
           "price": 500,
           "whatsappLink": "https://wa.me/919820175000",
-          "image": "Almond-Wood-Pressed-oil"
+          "image": "Almond-Wood-Pressed-oil",
+          "slug": "almond-wood-pressed-oil"
         },
         {
           "id": 6,
@@ -57,7 +62,8 @@
           "weight": "950 ml",
           "price": 670,
           "whatsappLink": "https://wa.me/p/8418987268122354/919820175000",
-          "image": "Black-Mustard-Cold-Pressed-Oil"
+          "image": "Black-Mustard-Cold-Pressed-Oil",
+          "slug": "black-mustard-cold-pressed-oil"
         },
         {
           "id": 7,
@@ -66,7 +72,8 @@
           "weight": "950 ml",
           "price": 670,
           "whatsappLink": "https://wa.me/p/8973024049380406/919820175000",
-          "image": "Yellow-Mustard-Cold-Pressed-Oil"
+          "image": "Yellow-Mustard-Cold-Pressed-Oil",
+          "slug": "yellow-mustard-cold-pressed-oil"
         },
         {
           "id": 8,
@@ -75,7 +82,8 @@
           "weight": "950 ml",
           "price": 2000,
           "whatsappLink": "https://wa.me/p/9156025557857378/919820175000",
-          "image": "Extra-Virigin-Olive-Oil"
+          "image": "Extra-Virigin-Olive-Oil",
+          "slug": "extra-virgin-olive-oil-cold-pressed"
         },
         {
           "id": 9,
@@ -84,7 +92,8 @@
           "weight": "950 ml",
           "price": 670,
           "whatsappLink": "https://wa.me/p/27010613461857199/919820175000",
-          "image": "Sunflower-Oil"
+          "image": "Sunflower-Oil",
+          "slug": "sunflower-wood-pressed-oil"
         },
         {
           "id": 10,
@@ -93,7 +102,8 @@
           "weight": "950 ml",
           "price": 670,
           "whatsappLink": "https://wa.me/p/27093054486959699/919820175000",
-          "image": "Safflower-Oil"
+          "image": "Safflower-Oil",
+          "slug": "safflower-wood-pressed-oil"
         },
         {
           "id": 16,
@@ -102,7 +112,8 @@
           "weight": "1000 ml",
           "price": 3000,
           "whatsappLink": "https://wa.me/p/9614005988713986/919820175000",
-          "image": "A2-Bilona-Cow-Ghee"
+          "image": "A2-Bilona-Cow-Ghee",
+          "slug": "a2-bilona-cow-ghee"
         }
       ]
     },
@@ -118,7 +129,8 @@
           "weight": "100 ml",
           "price": 250,
           "whatsappLink": "https://wa.me/919820175000",
-          "image": "Castor-Cold-Pressed-Oil"
+          "image": "Castor-Cold-Pressed-Oil",
+          "slug": "castor-cold-pressed-oil"
         },
         {
           "id": 21,
@@ -127,7 +139,8 @@
           "weight": "50 ml",
           "price": 340,
           "whatsappLink": "https://wa.me/919820175000",
-          "image": "Argan-Oil"
+          "image": "Argan-Oil",
+          "slug": "argan-oil"
         },
         {
           "id": 22,
@@ -136,7 +149,8 @@
           "weight": "100 ml",
           "price": 289,
           "whatsappLink": "https://wa.me/919820175000",
-          "image": "Amla-Oil"
+          "image": "Amla-Oil",
+          "slug": "cold-pressed-amla-oil"
         },
         {
           "id": 23,
@@ -145,7 +159,8 @@
           "weight": "100 ml",
           "price": 340,
           "whatsappLink": "https://wa.me/919820175000",
-          "image": "Black-Seed-Oil"
+          "image": "Black-Seed-Oil",
+          "slug": "cold-pressed-black-seed-oil"
         },
         {
           "id": 24,
@@ -154,7 +169,8 @@
           "weight": "100 ml",
           "price": 120,
           "whatsappLink": "https://wa.me/919820175000",
-          "image": "Neem-Oil"
+          "image": "Neem-Oil",
+          "slug": "cold-pressed-neem-oil"
         },
         {
           "id": 25,
@@ -163,7 +179,8 @@
           "weight": "100 ml",
           "price": 150,
           "whatsappLink": "https://wa.me/919820175000",
-          "image": "Flax-Seed-Oil"
+          "image": "Flax-Seed-Oil",
+          "slug": "cold-pressed-flax-seed-oil"
         },
         {
           "id": 26,
@@ -172,7 +189,8 @@
           "weight": "100 ml",
           "price": 220,
           "whatsappLink": "https://wa.me/919820175000",
-          "image": "Steam-Distilled-Rose-Water"
+          "image": "Steam-Distilled-Rose-Water",
+          "slug": "steam-distilled-rose-water"
         },
         {
           "id": 27,
@@ -181,7 +199,8 @@
           "weight": "90 gms",
           "price": 199,
           "whatsappLink": "https://wa.me/919820175000",
-          "image": "Fuller's-Earth"
+          "image": "Fuller's-Earth",
+          "slug": "fuller-s-earth-multani-mitti"
         },
         {
           "id": 28,
@@ -190,7 +209,8 @@
           "weight": "100 gms",
           "price": 180,
           "whatsappLink": "https://wa.me/919820175000",
-          "image": "Aloevera-Gel"
+          "image": "Aloevera-Gel",
+          "slug": "aloevera-gel"
         }
       ]
     },
@@ -206,7 +226,8 @@
           "weight": "15 ml",
           "price": 180,
           "whatsappLink": "https://wa.me/919820175000",
-          "image": "Rosemary-Essential-Oil"
+          "image": "Rosemary-Essential-Oil",
+          "slug": "rosemary-essential-oil"
         },
         {
           "id": 18,
@@ -215,7 +236,8 @@
           "weight": "15 ml",
           "price": 140,
           "whatsappLink": "https://wa.me/919820175000",
-          "image": "Lemon-Essential-Oil"
+          "image": "Lemon-Essential-Oil",
+          "slug": "lemon-essential-oil"
         },
         {
           "id": 19,
@@ -224,7 +246,8 @@
           "weight": "15 ml",
           "price": 140,
           "whatsappLink": "https://wa.me/919820175000",
-          "image": "Eucalyptus-Essential-Oil"
+          "image": "Eucalyptus-Essential-Oil",
+          "slug": "eucalyptus-essential-oil"
         },
         {
           "id": 20,
@@ -233,7 +256,8 @@
           "weight": "15 ml",
           "price": 140,
           "whatsappLink": "https://wa.me/919820175000",
-          "image": "Tea-Tree-Essential-Oil"
+          "image": "Tea-Tree-Essential-Oil",
+          "slug": "tea-tree-essential-oil"
         }
       ]
     },
@@ -249,7 +273,8 @@
           "weight": "1 kg",
           "price": 1640,
           "whatsappLink": "https://wa.me/919820175000",
-          "image": "Kashmiri-Mamra-Almonds-(Organic)"
+          "image": "Kashmiri-Mamra-Almonds-(Organic)",
+          "slug": "kashmiri-mamra-almonds-organic"
         },
         {
           "id": 12,
@@ -258,7 +283,8 @@
           "weight": "1 kg",
           "price": 1540,
           "whatsappLink": "https://wa.me/919820175000",
-          "image": "Kashmiri-Walnut-Kernels-(Organic)"
+          "image": "Kashmiri-Walnut-Kernels-(Organic)",
+          "slug": "kashmiri-walnut-kernels-organic"
         },
         {
           "id": 13,
@@ -267,7 +293,8 @@
           "weight": "1 kg",
           "price": 1100,
           "whatsappLink": "https://wa.me/919820175000",
-          "image": "Cranberries"
+          "image": "Cranberries",
+          "slug": "cranberries"
         },
         {
           "id": 14,
@@ -276,7 +303,8 @@
           "weight": "1 gm",
           "price": 350,
           "whatsappLink": "https://wa.me/919820175000",
-          "image": "Kashmiri-Organic-Saffron"
+          "image": "Kashmiri-Organic-Saffron",
+          "slug": "kashmiri-organic-saffron"
         }
       ]
     }
