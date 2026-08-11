@@ -16,8 +16,8 @@ contact.html        Ways to order, address, marketplace links
 
 json/products.json  The catalogue. Editing this file is how you change products.
 js/layout.js        Shared header + footer, injected into #header / #footer
-js/products.js      Renders the catalogue and emits Product structured data
-js/main.js          Nav, scroll reveal, tabs, mobile menu, video, back-to-top
+js/main.js          Nav, scroll reveal, tabs, mobile menu, video, back-to-top,
+                    WhatsApp order-click tracking
 css/style.css       Site styles
 css/fonts.css       Self-hosted Open Sans + Lora
 css/bootstrap.min.css   Compiled from scss/bootstrap.scss
@@ -46,12 +46,23 @@ photo in as `img/products/Avocado-Oil.jpg`, then run:
 
 ```sh
 npm install
-npm run optimise:img
+npm run optimise:img      # resize + generate .webp / .avif
+npm run build:catalogue   # render products.json into index.html
 ```
 
-That resizes it and generates the `.webp` and `.avif` versions the site serves.
-Commit all three files. Nothing else needs touching — the grid, the category
-tabs and the structured data are all generated from the JSON.
+Commit the generated images **and** the updated `index.html`.
+
+> **`npm run build:catalogue` is not optional.** The product grid, the category
+> tabs and the Product structured data are baked into `index.html` as static
+> HTML between `<!-- CATALOGUE:*:START -->` markers. Editing `products.json`
+> alone changes nothing on the site.
+>
+> It works this way for SEO. The catalogue used to be fetched and injected by
+> JavaScript, which meant a crawler that did not execute JS saw an empty grid,
+> and the Product schema was created client-side where it is indexed far less
+> reliably. Baking it in puts all 28 products, their prices and their schema in
+> the raw HTML. It is also smaller on the wire — 14 KB gzipped, versus the
+> ~22 KB of HTML + JSON + JS it replaced.
 
 ## Changing theme colours
 

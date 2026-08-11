@@ -6,7 +6,9 @@
   "scripts": {
     "serve": "npx --yes serve -l 8080 .",
     "optimise:img": "node scripts/optimise-images.js",
-    "build:css": "sass --no-source-map --style=compressed scss/bootstrap.scss css/bootstrap.min.css"
+    "build:css": "sass --no-source-map --style=compressed scss/bootstrap.scss css/bootstrap.min.css",
+    "build:catalogue": "node scripts/build-catalogue.js",
+    "build": "npm run build:catalogue"
   },
   "devDependencies": {
     "bootstrap": "^5.3.3",

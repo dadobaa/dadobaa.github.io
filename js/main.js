@@ -177,6 +177,23 @@
     });
   }
 
+  /* ---------- WhatsApp order click tracking ----------
+     The tap through to WhatsApp is the real conversion, so record it in GA4. */
+  function trackOrderClicks() {
+    document.addEventListener('click', function (e) {
+      var link = e.target.closest && e.target.closest('.product-order');
+      if (!link || typeof window.gtag !== 'function') return;
+      window.gtag('event', 'select_item', {
+        item_list_name: 'Product Grid',
+        items: [{
+          item_name: link.getAttribute('data-product'),
+          price: Number(link.getAttribute('data-price')) || undefined,
+          currency: 'INR'
+        }]
+      });
+    });
+  }
+
   /* ---------- hide the loading spinner ---------- */
   function hideSpinner() {
     var spinner = document.getElementById('spinner');
@@ -192,6 +209,7 @@
     testimonials();
     collapseToggles();
     pillTabs();
+    trackOrderClicks();
   }
 
   if (document.readyState === 'loading') {
