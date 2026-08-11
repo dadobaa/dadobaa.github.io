@@ -3,12 +3,12 @@
     {
       "id": "cooking-oils",
       "name": "Cooking Oils & Ghee",
-      "blurb": "Wood pressed and cold pressed edible oils, extracted slowly at low temperature so the aroma and nutrients stay intact.",
+      "blurb": "Wood pressed and cold pressed cooking oils, made on a traditional lakdi ghani (also called marachekku or chekku) at low temperature, so the aroma and nutrients survive. Unrefined, unfiltered and never blended.",
       "products": [
         {
           "id": 1,
           "name": "Groundnut Wood Pressed Oil",
-          "desc": "Traditional lakdi ghani groundnut oil with a rich, nutty aroma. Ideal for everyday Indian cooking and deep frying.",
+          "desc": "Traditional lakdi ghani groundnut oil, also known as marachekku or chekku oil, with a rich nutty aroma. Ideal for everyday Indian cooking and deep frying.",
           "weight": "950 ml",
           "price": 480,
           "whatsappLink": "https://wa.me/p/8113181328718023/919820175000",
@@ -17,7 +17,7 @@
         {
           "id": 2,
           "name": "White Sesame Wood Pressed Oil",
-          "desc": "Cold extracted white sesame (til) oil. Light, versatile and traditionally used for cooking and oil pulling.",
+          "desc": "Cold extracted white sesame (til) oil, pressed on a wooden ghani. Light and versatile, traditionally used for cooking, oil pulling and abhyanga massage.",
           "weight": "950 ml",
           "price": 720,
           "whatsappLink": "https://wa.me/p/26580553651589156/919820175000",
@@ -26,7 +26,7 @@
         {
           "id": 3,
           "name": "Black Sesame Wood Pressed Oil",
-          "desc": "Robust black sesame oil pressed on a wooden ghani. Deeply aromatic, rich in natural antioxidants.",
+          "desc": "Robust black sesame oil pressed on a wooden lakdi ghani. Deeply aromatic and naturally rich in antioxidants.",
           "weight": "950 ml",
           "price": 720,
           "whatsappLink": "https://wa.me/p/8156676044382192/919820175000",
@@ -35,7 +35,7 @@
         {
           "id": 4,
           "name": "Coconut Wood Pressed Oil",
-          "desc": "Unrefined wood pressed coconut oil with a natural sweet aroma. Suitable for cooking, hair and skin.",
+          "desc": "Unrefined wood pressed coconut oil with a natural sweet aroma. Solidifies below 24°C, which is normal. Suitable for cooking, hair and skin.",
           "weight": "950 ml",
           "price": 720,
           "whatsappLink": "https://wa.me/p/8589922877727151/919820175000",
@@ -53,7 +53,7 @@
         {
           "id": 6,
           "name": "Black Mustard Cold Pressed Oil",
-          "desc": "Sharp, pungent kachi ghani black mustard oil. A staple of Bengali, Bihari and North Indian kitchens.",
+          "desc": "Sharp, pungent kachi ghani black mustard oil, cold pressed on a wooden ghani. A staple of Bengali, Bihari and North Indian kitchens.",
           "weight": "950 ml",
           "price": 670,
           "whatsappLink": "https://wa.me/p/8418987268122354/919820175000",
@@ -62,7 +62,7 @@
         {
           "id": 7,
           "name": "Yellow Mustard Cold Pressed Oil",
-          "desc": "Milder than black mustard, with a clean golden colour. Great for tempering, pickling and everyday cooking.",
+          "desc": "Kachi ghani yellow mustard oil, milder than black mustard with a clean golden colour. Great for tempering, pickling and everyday cooking.",
           "weight": "950 ml",
           "price": 670,
           "whatsappLink": "https://wa.me/p/8973024049380406/919820175000",
@@ -98,7 +98,7 @@
         {
           "id": 16,
           "name": "A2 Bilona Cow Ghee",
-          "desc": "Hand churned A2 ghee made the bilona way from curd, not cream. Grainy texture and a deep roasted aroma.",
+          "desc": "Hand churned A2 bilona cow ghee, made the traditional way from cultured curd rather than cream. Grainy texture and a deep roasted aroma.",
           "weight": "1000 ml",
           "price": 3000,
           "whatsappLink": "https://wa.me/p/9614005988713986/919820175000",
@@ -109,7 +109,7 @@
     {
       "id": "hair-skin-care",
       "name": "Hair & Skin Care",
-      "blurb": "Cold pressed carrier oils and single ingredient skincare, with nothing added and nothing refined out.",
+      "blurb": "Cold pressed carrier oils and single ingredient skincare, with nothing added and nothing refined out. Suitable for hair oiling, scalp massage and everyday skin care.",
       "products": [
         {
           "id": 15,
@@ -197,7 +197,7 @@
     {
       "id": "essential-oils",
       "name": "Essential Oils",
-      "blurb": "Concentrated steam distilled essential oils for aromatherapy, diffusers and diluted topical use.",
+      "blurb": "Concentrated steam distilled essential oils for aromatherapy, diffusers and diluted topical use. Always blend with a carrier oil before applying to skin.",
       "products": [
         {
           "id": 17,
@@ -240,7 +240,7 @@
     {
       "id": "dry-fruits",
       "name": "Dry Fruits & Superfoods",
-      "blurb": "Hand picked Kashmiri dry fruits and superfoods, sourced direct and sold unpolished.",
+      "blurb": "Hand picked Kashmiri dry fruits and superfoods, sourced direct from growers and sold unpolished and unbleached.",
       "products": [
         {
           "id": 11,
