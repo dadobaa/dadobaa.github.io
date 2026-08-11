@@ -108,6 +108,7 @@
             '<h2 class="h5 text-light mb-4">Explore</h2>' +
             '<a class="btn btn-link" href="/index.html">Home</a>' +
             '<a class="btn btn-link" href="/index.html#products">All Products</a>' +
+            '<a class="btn btn-link" href="/cold-pressed-oil-mumbai.html">Cold Pressed Oil in Mumbai</a>' +
             '<a class="btn btn-link" href="/about.html">Our Process</a>' +
             '<a class="btn btn-link" href="/contact.html">Contact Us</a>' +
           '</div>' +
