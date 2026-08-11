@@ -316,6 +316,20 @@ button:focus-visible {
 }
 
 
+/*** Product pages ***/
+/* No page-header banner here, so the content needs its own clearance under
+   the fixed navbar — otherwise the breadcrumb renders behind it. */
+.product-page {
+    margin-top: 86px;
+}
+
+@media (min-width: 992px) {
+    .product-page {
+        margin-top: 119px;
+    }
+}
+
+
 /*** Page header (about / contact / 404) ***/
 .page-header {
     padding-top: 12rem;

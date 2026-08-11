@@ -161,7 +161,7 @@ ${JSON.stringify(crumbs, null, 2)}
     <main>
         <section class="container-xxl py-5 product-page">
             <div class="container">
-                <nav aria-label="breadcrumb" class="pt-5">
+                <nav aria-label="breadcrumb">
                     <ol class="breadcrumb">
                         <li class="breadcrumb-item"><a href="/index.html">Home</a></li>
                         <li class="breadcrumb-item"><a href="/index.html#products">${esc(cat.name)}</a></li>
