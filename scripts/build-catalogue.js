@@ -8,8 +8,8 @@
  * on page load. Googlebot can render JS, but client-side content and
  * client-side JSON-LD are indexed less reliably than markup that is already in
  * the HTML — and a crawler that does not run JS saw an empty product grid.
- * Baking it in makes all 28 products, their prices and their Product schema
- * visible in the raw HTML.
+ * Baking it in makes all 28 products and their Product schema visible in the
+ * raw HTML. Prices are currently hidden — see SHOW_PRICES below.
  *
  * Run this after every edit to json/products.json, and commit the result.
  */
@@ -20,6 +20,12 @@ const ROOT = path.join(__dirname, '..');
 const SITE = 'https://dadobaa.in';
 const IMG = '/img/products/';
 const CARD_SIZES = '(max-width: 575px) 50vw, (max-width: 991px) 33vw, 25vw';
+
+// Prices are hidden site-wide. Flip to true to show them again — that restores
+// the visible price, the Offer price in structured data and the GA value.
+// Note: Google requires structured data to match visible content, so the price
+// is removed from BOTH places together. Never show one without the other.
+const SHOW_PRICES = false;
 
 function esc(v) {
   return String(v == null ? '' : v)
@@ -48,12 +54,12 @@ function card(p, eager) {
               <div class="text-center p-3 flex-grow-1 d-flex flex-column">
                 <h3 class="h6 mb-1 product-title"><a class="text-body text-decoration-none" href="/products/${p.slug}.html">${esc(p.name)}</a></h3>
                 <span class="d-block text-muted x-small mb-2">${esc(p.weight)}</span>
-                <span class="d-block text-primary fw-bold mt-auto product-price">₹${esc(p.price)}</span>
+                ${SHOW_PRICES ? `<span class="d-block text-primary fw-bold mt-auto product-price">₹${esc(p.price)}</span>` : ''}
               </div>
               <div class="d-flex border-top">
                 <small class="w-100 text-center py-2">
                   <a class="text-body product-order" href="${esc(p.whatsappLink)}" target="_blank" rel="noopener"
-                     data-product="${esc(p.name)}" data-price="${esc(p.price)}">
+                     data-product="${esc(p.name)}"${SHOW_PRICES ? ` data-price="${esc(p.price)}"` : ''}>
                     <svg class="icon text-primary me-2" aria-hidden="true"><use href="#i-bag"></use></svg>Order Now
                   </a>
                 </small>
@@ -104,14 +110,12 @@ function schema(categories) {
         image: SITE + imgPath(p.image, 'jpg'),
         category: cat.name,
         brand: { '@type': 'Brand', name: 'Dadobaa' },
-        offers: {
+        offers: Object.assign({
           '@type': 'Offer',
-          price: p.price,
-          priceCurrency: 'INR',
           availability: 'https://schema.org/InStock',
           url: SITE + '/products/' + p.slug + '.html',
           seller: { '@type': 'Organization', name: 'Dadobaa Oils' }
-        }
+        }, SHOW_PRICES ? { price: p.price, priceCurrency: 'INR' } : {})
       }
     });
   }));

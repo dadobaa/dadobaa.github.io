@@ -18,6 +18,9 @@ const ROOT = path.join(__dirname, '..');
 const SITE = 'https://dadobaa.in';
 const OUT_DIR = path.join(ROOT, 'products');
 
+// Keep in sync with SHOW_PRICES in build-catalogue.js.
+const SHOW_PRICES = false;
+
 function esc(v) {
   return String(v == null ? '' : v)
     .replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;')
@@ -65,7 +68,8 @@ const GTAG = `    <script>
 function page(p, cat, siblings) {
   const url = `${SITE}/products/${p.slug}.html`;
   const title = `${p.name} ${p.weight} | Buy Online | Dadobaa Oils`.slice(0, 70);
-  const desc = `${p.desc} ₹${p.price} for ${p.weight}. Pressed in small batches in Mumbai and delivered across India. Order on WhatsApp.`.slice(0, 300);
+  const priceLine = SHOW_PRICES ? ` ₹${p.price} for ${p.weight}.` : ` Available in ${p.weight}.`;
+  const desc = `${p.desc}${priceLine} Pressed in small batches in Mumbai and delivered across India. Order on WhatsApp.`.slice(0, 300);
   const img = SITE + imgPath(p.image, 'jpg');
 
   const schema = {
@@ -77,15 +81,13 @@ function page(p, cat, siblings) {
     sku: 'DAD-' + p.id,
     category: cat.name,
     brand: { '@type': 'Brand', name: 'Dadobaa' },
-    offers: {
+    offers: Object.assign({
       '@type': 'Offer',
       url: url,
-      price: p.price,
-      priceCurrency: 'INR',
       availability: 'https://schema.org/InStock',
       itemCondition: 'https://schema.org/NewCondition',
       seller: { '@type': 'Organization', name: 'Dadobaa Oils', '@id': SITE + '/#organization' }
-    }
+    }, SHOW_PRICES ? { price: p.price, priceCurrency: 'INR' } : {})
   };
 
   const crumbs = {
@@ -99,7 +101,7 @@ function page(p, cat, siblings) {
   };
 
   const related = siblings.slice(0, 4).map(s => `
-                        <li class="mb-2"><a href="${s.slug}.html">${esc(s.name)} — ₹${s.price}</a></li>`).join('');
+                        <li class="mb-2"><a href="${s.slug}.html">${esc(s.name)}</a></li>`).join('');
 
   return `<!DOCTYPE html>
 <html lang="en-IN">
@@ -120,9 +122,9 @@ function page(p, cat, siblings) {
     <meta property="og:image" content="${img}">
     <meta property="og:image:alt" content="${esc(p.name)}">
     <meta property="og:locale" content="en_IN">
-    <meta property="product:price:amount" content="${p.price}">
+${SHOW_PRICES ? `    <meta property="product:price:amount" content="${p.price}">
     <meta property="product:price:currency" content="INR">
-    <meta name="twitter:card" content="summary_large_image">
+` : ''}    <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="${esc(p.name)} ${esc(p.weight)} | Dadobaa Oils">
     <meta name="twitter:description" content="${esc(p.desc)}">
     <meta name="twitter:image" content="${img}">
@@ -184,7 +186,7 @@ ${JSON.stringify(crumbs, null, 2)}
                     <div class="col-lg-6">
                         <h1 class="display-6 mb-2">${esc(p.name)}</h1>
                         <p class="text-muted mb-3">${esc(p.weight)}</p>
-                        <p class="display-6 text-primary fw-bold mb-4">₹${p.price}</p>
+                        ${SHOW_PRICES ? `<p class="display-6 text-primary fw-bold mb-4">₹${p.price}</p>` : `<p class="mb-4"><a class="text-primary fw-semibold" href="${esc(p.whatsappLink)}" target="_blank" rel="noopener">Ask for today's price on WhatsApp</a></p>`}
 
                         <p class="lead">${esc(p.desc)}</p>
 
@@ -194,7 +196,7 @@ ${JSON.stringify(crumbs, null, 2)}
 
                         <a class="btn btn-primary rounded-pill py-3 px-5 me-2 mb-2 product-order"
                            href="${esc(p.whatsappLink)}" target="_blank" rel="noopener"
-                           data-product="${esc(p.name)}" data-price="${p.price}">
+                           data-product="${esc(p.name)}"${SHOW_PRICES ? ` data-price="${p.price}"` : ''}>
                             <svg class="icon me-2" aria-hidden="true"><use href="#i-whatsapp"></use></svg>Order on WhatsApp
                         </a>
                         <a class="btn btn-outline-primary rounded-pill py-3 px-5 mb-2" href="tel:+919820175000">

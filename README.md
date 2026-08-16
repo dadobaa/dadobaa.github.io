@@ -66,6 +66,27 @@ Commit the generated images **and** the updated `index.html`.
 > the raw HTML. It is also smaller on the wire — 14 KB gzipped, versus the
 > ~22 KB of HTML + JSON + JS it replaced.
 
+## Showing or hiding prices
+
+Prices are currently **hidden** across the whole site. To bring them back, set
+`SHOW_PRICES = true` in **both** build scripts and rebuild:
+
+```
+scripts/build-catalogue.js      const SHOW_PRICES = true;
+scripts/build-product-pages.js  const SHOW_PRICES = true;
+npm run build
+```
+
+The prices themselves stay in `json/products.json` either way — nothing is lost.
+
+The flag deliberately controls the visible price **and** the `price` in the
+Product structured data together. Google requires structured data to match what
+a visitor can see, so publishing a price in schema that is not on the page risks
+a manual action. Do not switch one on without the other.
+
+While prices are hidden you also lose price rich results in Google, and Google
+Merchant Center cannot be used (it requires a price per product).
+
 ## Changing theme colours
 
 Edit `scss/bootstrap.scss`, then:
