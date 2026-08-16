@@ -8,7 +8,8 @@
     "build": "node scripts/csv-to-products.js && node scripts/optimise-images.js && node scripts/build-product-pages.js && node scripts/build-catalogue.js && node scripts/build-sitemap.js",
     "check": "node scripts/csv-to-products.js",
     "optimise:img": "node scripts/optimise-images.js",
-    "build:css": "sass --no-source-map --style=compressed scss/bootstrap.scss css/bootstrap.min.css"
+    "build:css": "sass --no-source-map --style=compressed scss/bootstrap.scss css/bootstrap.min.css",
+    "test": "node scripts/test-catalogue.js"
   },
   "devDependencies": {
     "bootstrap": "^5.3.3",

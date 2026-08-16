@@ -47,8 +47,12 @@ To do the same thing locally:
 
 ```sh
 npm install
-npm run build
+npm run build     # read products.csv, optimise images, rebuild every page
+npm test          # 64 checks over the whole catalogue pipeline
 ```
+
+`npm test` needs no dependencies. It snapshots the real files, exercises every
+create/update/delete path and every validation rule, and restores everything.
 
 `npm run build` runs, in order: read `products.csv` → optimise images →
 generate the 28 product pages → rebuild the homepage grid → rebuild the sitemap.

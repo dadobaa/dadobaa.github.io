@@ -21,6 +21,19 @@ const OUT_DIR = path.join(ROOT, 'products');
 // Keep in sync with SHOW_PRICES in build-catalogue.js.
 const SHOW_PRICES = false;
 
+/**
+ * Serialise JSON-LD safely for embedding in a <script> tag.
+ *
+ * JSON.stringify does not escape "<", so a product name containing "</script>"
+ * would close the schema block early and let the rest of the value run as HTML.
+ * Escaping these three characters as \u sequences keeps the JSON valid and
+ * makes that impossible.
+ */
+function jsonLd(obj) {
+  return JSON.stringify(obj, null, 2)
+    .replace(/</g, '\\u003c').replace(/>/g, '\\u003e').replace(/&/g, '\\u0026');
+}
+
 function esc(v) {
   return String(v == null ? '' : v)
     .replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;')
@@ -147,11 +160,11 @@ ${SHOW_PRICES ? `    <meta property="product:price:amount" content="${p.price}">
 ${GTAG}
 
     <script type="application/ld+json">
-${JSON.stringify(schema, null, 2)}
+${jsonLd(schema)}
     </script>
 
     <script type="application/ld+json">
-${JSON.stringify(crumbs, null, 2)}
+${jsonLd(crumbs)}
     </script>
 </head>
 

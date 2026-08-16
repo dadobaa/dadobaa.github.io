@@ -83,7 +83,13 @@ Fix that cell, upload again, done.
 
 It checks for: missing names, prices, sizes, photos or WhatsApp links; prices
 written as text; a photo file that does not exist; two products sharing an ID;
-and two products that would end up with the same web address.
+two products with the same name; and two products that would end up with the
+same web address.
+
+It also copes with the things spreadsheets normally do to a file — commas and
+quotes inside a description, line breaks inside a cell, Hindi text, Windows line
+endings, and the invisible marker Excel adds to the start of a saved CSV. A
+price typed as `₹1,250` is understood too.
 
 ---
 

@@ -99,6 +99,7 @@ try {
 const images = fs.existsSync(IMG_DIR) ? fs.readdirSync(IMG_DIR) : [];
 const usedIds = new Set();
 const usedSlugs = new Map();
+const usedNames = new Map();
 const categories = new Map();
 
 // Rows without an ID get a fresh number ABOVE every id ever used. Recycling a
@@ -123,6 +124,7 @@ rows.slice(1).forEach((cells, i) => {
   /* id */
   const rawId = get('ID');
   let id;
+  const idWasTyped = rawId !== '';
   if (rawId === '') id = null;                 // fill in later
   else if (!/^\d+$/.test(rawId)) problems.push(`${at_} ("${name}"): the ID must be a whole number, but it says "${rawId}". You can also leave it blank and one will be filled in.`);
   else {
@@ -153,13 +155,18 @@ rows.slice(1).forEach((cells, i) => {
   else if (!/^https:\/\/wa\.me\//.test(wa)) problems.push(`${at_} ("${name}"): the WhatsApp link should start with https://wa.me/ — it currently says "${wa}".`);
   if (desc.length < 20) warnings.push(`${at_} ("${name}"): the description is very short. Google shows this text, so a sentence or two helps.`);
 
+  const nameKey = name.toLowerCase();
+  if (usedNames.has(nameKey)) {
+    problems.push(`${at_} ("${name}"): there is already a product with this name on row ${usedNames.get(nameKey)}. Give one of them a different name.`);
+  } else usedNames.set(nameKey, line);
+
   if (!categories.has(catName)) {
     categories.set(catName, { id: existingCatIds[catName] || slugify(catName), name: catName, blurb: get('Category Description'), products: [] });
   } else if (get('Category Description') && !categories.get(catName).blurb) {
     categories.get(catName).blurb = get('Category Description');
   }
 
-  categories.get(catName).products.push({ _line: line, id, name, desc, weight: size, price, whatsappLink: wa, image });
+  categories.get(catName).products.push({ _line: line, _idWasTyped: idWasTyped, id, name, desc, weight: size, price, whatsappLink: wa, image });
 });
 
 /* fill blank IDs, then work out web addresses */
@@ -168,11 +175,15 @@ categories.forEach(cat => cat.products.forEach(p => {
 }));
 
 categories.forEach(cat => cat.products.forEach(p => {
-  p.slug = (existingNames[p.id] === p.name && existingSlugs[p.id]) ? existingSlugs[p.id] : slugify(p.name);
+  // Keep the existing web address when the row carries an ID the sheet already
+  // had — that is the same product, possibly renamed, and links to it must keep
+  // working. Rows with a blank ID are new products and always get a fresh
+  // address, so they can never land on a deleted product's URL.
+  p.slug = (p._idWasTyped && existingSlugs[p.id]) ? existingSlugs[p.id] : slugify(p.name);
   if (usedSlugs.has(p.slug)) {
     problems.push(`row ${p._line} ("${p.name}"): this would use the same web address as "${usedSlugs.get(p.slug)}". Give one of them a slightly different name.`);
   } else usedSlugs.set(p.slug, p.name);
-  delete p._line;
+  delete p._line; delete p._idWasTyped;
 }));
 
 /* ---------- report ---------- */
