@@ -3,8 +3,9 @@
 Static marketing and catalogue site for Dadobaa Oils, hosted on GitHub Pages at
 [dadobaa.in](https://dadobaa.in).
 
-No build step is required to deploy — push to `master` and GitHub Pages serves
-the files as they are. The npm scripts below are optional tools for maintenance.
+**To change the products, edit `products.csv` and nothing else.** See
+[HOW-TO-UPDATE-PRODUCTS.md](HOW-TO-UPDATE-PRODUCTS.md) — it is written for
+someone who does not code. A GitHub Action rebuilds and republishes the site.
 
 ## Structure
 
@@ -16,7 +17,8 @@ contact.html        Ways to order, address, marketplace links
 cold-pressed-oil-mumbai.html   Local landing page
 products/*.html     28 generated product pages — do not hand-edit
 
-json/products.json  The catalogue. Editing this file is how you change products.
+products.csv        THE ONLY FILE YOU EDIT. The whole catalogue, as a spreadsheet.
+json/products.json  Generated from products.csv — do not hand-edit.
 js/layout.js        Shared header + footer, injected into #header / #footer
 js/main.js          Nav, scroll reveal, tabs, mobile menu, video, back-to-top,
                     WhatsApp order-click tracking
@@ -24,47 +26,38 @@ css/style.css       Site styles
 css/fonts.css       Self-hosted Open Sans + Lora
 css/bootstrap.min.css   Compiled from scss/bootstrap.scss
 scss/bootstrap.scss     Theme customisation (colours, fonts)
-scripts/            Maintenance scripts
+scripts/            Build scripts (csv-to-products, optimise-images,
+                    build-product-pages, build-catalogue, build-sitemap)
 ```
 
 ## Adding or changing a product
 
-Everything lives in `json/products.json`. Add an entry under the right category:
+**Edit `products.csv` — that is the only file anyone needs to touch.**
+It is a spreadsheet; open it in Excel, Numbers or Google Sheets.
 
-```json
-{
-  "id": 29,
-  "name": "Avocado Oil",
-  "desc": "One or two sentences. Used for the page and for search results.",
-  "weight": "100 ml",
-  "price": 450,
-  "whatsappLink": "https://wa.me/919820175000",
-  "image": "Avocado-Oil"
-}
-```
+Full instructions for a non-technical person are in
+**[HOW-TO-UPDATE-PRODUCTS.md](HOW-TO-UPDATE-PRODUCTS.md)**.
 
-`image` is the filename in `img/products/` **without** an extension. Drop the
-photo in as `img/products/Avocado-Oil.jpg`, then run:
+Pushing a change to `products.csv` (or dropping a photo into `img/products/`)
+triggers `.github/workflows/build-site.yml`, which checks the file, resizes any
+new photos, rebuilds every page and the sitemap, and commits the result. If the
+file has a mistake the workflow stops and the live site is left untouched.
+
+To do the same thing locally:
 
 ```sh
 npm install
-npm run optimise:img   # resize + generate .webp / .avif
-npm run build          # regenerate product pages AND the homepage grid
+npm run build
 ```
 
-Commit the generated images **and** the updated `index.html`.
+`npm run build` runs, in order: read `products.csv` → optimise images →
+generate the 28 product pages → rebuild the homepage grid → rebuild the sitemap.
 
-> **`npm run build` is not optional.** The product grid, the category
-> tabs and the Product structured data are baked into `index.html` as static
-> HTML between `<!-- CATALOGUE:*:START -->` markers. Editing `products.json`
-> alone changes nothing on the site.
->
-> It works this way for SEO. The catalogue used to be fetched and injected by
-> JavaScript, which meant a crawler that did not execute JS saw an empty grid,
-> and the Product schema was created client-side where it is indexed far less
-> reliably. Baking it in puts all 28 products, their prices and their schema in
-> the raw HTML. It is also smaller on the wire — 14 KB gzipped, versus the
-> ~22 KB of HTML + JSON + JS it replaced.
+### Files written by the build — never edit these by hand
+
+`json/products.json` · `index.html` (between the `CATALOGUE:*` markers) ·
+`products/*.html` · `sitemap.xml` · the `.webp` / `.avif` image variants ·
+`img/.optimised.json`
 
 ## Showing or hiding prices
 
@@ -102,15 +95,16 @@ npm run build:css
 npm run serve      # http://localhost:8080
 ```
 
-Serve from the project root, not a subdirectory — `js/layout.js`, `js/products.js`
-and `404.html` use root-absolute paths (`/img/...`) so that the 404 page works
+Serve from the project root, not a subdirectory — `js/layout.js` and
+`404.html` use root-absolute paths (`/img/...`) so that the 404 page works
 correctly when GitHub Pages serves it for a nested URL.
 
 ## Analytics
 
 `gtag` is wired into every page but still has the placeholder
-`G-XXXXXXXXXX`. Create a GA4 property and replace that string in `index.html`,
-`about.html` and `contact.html` to start collecting data.
+`G-XXXXXXXXXX`. Create a GA4 property and replace that string everywhere it
+appears (`index.html`, `about.html`, `contact.html`,
+`cold-pressed-oil-mumbai.html` and `scripts/build-product-pages.js`).
 
 The product grid fires a GA4 `select_item` event whenever someone taps
 "Order Now", so WhatsApp click-throughs show up as conversions.

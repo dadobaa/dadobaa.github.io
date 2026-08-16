@@ -252,4 +252,13 @@ data.categories.forEach(cat => {
 // Persist slugs so the homepage cards can link to these pages.
 fs.writeFileSync(path.join(ROOT, 'json/products.json'), JSON.stringify(data, null, 2) + '\n');
 
-console.log(`  wrote ${written.length} product pages to /products/`);
+// Remove pages for products that have been deleted from the spreadsheet,
+// otherwise a removed product stays reachable and stays in Google.
+const keep = new Set(written.map(s => s + '.html'));
+let removed = 0;
+for (const f of fs.readdirSync(OUT_DIR)) {
+  if (f.endsWith('.html') && !keep.has(f)) { fs.unlinkSync(path.join(OUT_DIR, f)); removed++; }
+}
+
+console.log(`  wrote ${written.length} product pages to /products/` +
+            (removed ? `, removed ${removed} for deleted product(s)` : ''));

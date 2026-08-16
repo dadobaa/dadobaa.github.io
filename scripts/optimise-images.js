@@ -14,6 +14,7 @@
  */
 const sharp = require('sharp');
 const fs = require('fs');
+const crypto = require('crypto');
 const path = require('path');
 
 const ROOT = path.join(__dirname, '..');
@@ -42,6 +43,25 @@ function targetWidth(relNoExt) {
   return WIDTHS[relNoExt] != null ? WIDTHS[relNoExt] : DEFAULT_WIDTH;
 }
 
+/**
+ * A record of which files this script has already produced, so it never
+ * re-compresses its own output.
+ *
+ * This is needed because img/_originals is deliberately not committed. On a
+ * fresh checkout (a CI run, or a new machine) there are no pristine copies, so
+ * without this the script would re-compress an already-compressed file and lose
+ * a little quality on every run. The manifest IS committed.
+ */
+const MANIFEST = path.join(ROOT, 'img', '.optimised.json');
+
+function loadManifest() {
+  try { return JSON.parse(fs.readFileSync(MANIFEST, 'utf8')); } catch (e) { return {}; }
+}
+
+function hashOf(file) {
+  return crypto.createHash('sha256').update(fs.readFileSync(file)).digest('hex').slice(0, 16);
+}
+
 async function processOne(rel) {
   const abs = path.join(ROOT, rel);
   const dir = path.dirname(abs);
@@ -51,8 +71,14 @@ async function processOne(rel) {
 
   // Keep a pristine copy so repeat runs stay lossless-from-source.
   const originalPath = path.join(ORIGINALS, rel);
+  const hadOriginal = fs.existsSync(originalPath);
+
+  // If the file on disk is exactly what we produced last time, there is nothing
+  // to do — whether or not a pristine original happens to be available.
+  if (manifest[rel] === hashOf(abs)) return null;
+
   fs.mkdirSync(path.dirname(originalPath), { recursive: true });
-  if (!fs.existsSync(originalPath)) fs.copyFileSync(abs, originalPath);
+  if (!hadOriginal) fs.copyFileSync(abs, originalPath);
 
   const before = fs.statSync(originalPath).size;
   const width = targetWidth(relNoExt);
@@ -73,6 +99,7 @@ async function processOne(rel) {
   }
   fs.renameSync(tmp, abs);
 
+  manifest[rel] = hashOf(abs);       // remember our own output
   return { rel, before, after: fs.statSync(abs).size };
 }
 
@@ -92,17 +119,24 @@ function collect(dir) {
   return out;
 }
 
+const manifest = loadManifest();
+
 (async () => {
   const files = collect(path.join(ROOT, 'img'));
   if (!files.length) return console.log('No images found under img/.');
 
   let totalBefore = 0, totalAfter = 0;
+  let skipped = 0;
   for (const rel of files) {
     const r = await processOne(rel);
+    if (!r) { skipped++; continue; }
     totalBefore += r.before;
     totalAfter += r.after;
     console.log(`${r.rel.padEnd(52)} ${fmt(r.before).padStart(8)} -> ${fmt(r.after).padStart(8)}`);
   }
+  fs.writeFileSync(MANIFEST, JSON.stringify(manifest, null, 2) + '\n');
+  if (skipped) console.log(`  ${skipped} image(s) already done — left untouched`);
+  if (!totalBefore) { console.log('  Nothing new to process.'); return; }
 
   console.log(`\n${files.length} images: ${fmt(totalBefore)} -> ${fmt(totalAfter)} ` +
               `(${(100 - (totalAfter / totalBefore) * 100).toFixed(1)}% smaller, plus .webp/.avif variants)`);

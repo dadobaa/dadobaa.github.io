@@ -1,0 +1,68 @@
+name: Update website from products.csv
+
+# Runs automatically whenever products.csv changes, or a product photo is added
+# or replaced. Can also be started by hand from the Actions tab.
+#
+# What happens, in order:
+#   1. Reads products.csv and checks it for mistakes. If anything is wrong it
+#      STOPS HERE and the live website is left exactly as it was.
+#   2. Resizes any new photos and makes the web-friendly versions.
+#   3. Rebuilds the product pages, the home page grid and the sitemap.
+#   4. Saves everything, which publishes the website.
+
+on:
+  push:
+    branches: [master]
+    paths:
+      - 'products.csv'
+      - 'img/products/**'
+  workflow_dispatch:
+
+# Needed so the workflow can save the rebuilt pages back to the repository.
+permissions:
+  contents: write
+
+# If two edits land close together, let the newer one win rather than
+# running both and racing each other to save.
+concurrency:
+  group: update-website
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Get the website files
+        uses: actions/checkout@v4
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install the image tool
+        run: npm install --no-audit --no-fund --no-save sharp@^0.35.0
+
+      - name: Read products.csv, check it, and rebuild the site
+        run: npm run build
+
+      - name: Publish the changes
+        run: |
+          git config user.name "dadobaa-site-bot"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+          git add index.html products sitemap.xml json/products.json img
+
+          if git diff --staged --quiet; then
+            echo "Nothing changed — the website is already up to date."
+            exit 0
+          fi
+
+          git commit -m "Update website from products.csv [skip ci]"
+          git push
+
+      - name: Explain what to do if this failed
+        if: failure()
+        run: |
+          echo "::error::The website was NOT updated. Open the step above that has a red cross — it explains, in plain English, what needs fixing in products.csv. The live website has not changed."
